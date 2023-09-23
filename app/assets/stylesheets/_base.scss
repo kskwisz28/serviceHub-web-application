@@ -1,0 +1,307 @@
+@font-face {
+  font-family: "HelveticaNeueThin";
+  src: font-url("HelveticaNeueLTW01-35Thin.eot?#iefix");
+  src: font-url("HelveticaNeueLTW01-35Thin.eot?#iefix") format("eot"),
+    font-url("HelveticaNeueLTW01-35Thin.woff2") format("woff2"),
+    font-url("HelveticaNeueLTW01-35Thin.woff") format("woff"),
+    font-url("HelveticaNeueLTW01-35Thin.ttf") format("truetype"),
+    font-url("HelveticaNeueLTW01-35Thin.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HelveticaNeueLight";
+  src: font-url("HelveticaNeueLTW01-45Light.eot?#iefix");
+  src: font-url("HelveticaNeueLTW01-45Light.eot?#iefix") format("eot"),
+    font-url("HelveticaNeueLTW01-45Light.woff2") format("woff2"),
+    font-url("HelveticaNeueLTW01-45Light.woff") format("woff"),
+    font-url("HelveticaNeueLTW01-45Light.ttf") format("truetype"),
+    font-url("HelveticaNeueLTW01-45Light.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HelveticaNeue";
+  src: font-url("HelveticaNeueLTW01-55Roman.eot?#iefix");
+  src: font-url("HelveticaNeueLTW01-55Roman.eot?#iefix") format("eot"),
+    font-url("HelveticaNeueLTW01-55Roman.woff2") format("woff2"),
+    font-url("HelveticaNeueLTW01-55Roman.woff") format("woff"),
+    font-url("HelveticaNeueLTW01-55Roman.ttf") format("truetype"),
+    font-url("HelveticaNeueLTW01-55Roman.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HelveticaNeueItalic";
+  src: font-url("HelveticaNeueLTW01-56Italic.eot?#iefix");
+  src: font-url("HelveticaNeueLTW01-56Italic.eot?#iefix") format("eot"),
+    font-url("HelveticaNeueLTW01-56Italic.woff2") format("woff2"),
+    font-url("HelveticaNeueLTW01-56Italic.woff") format("woff"),
+    font-url("HelveticaNeueLTW01-56Italic.ttf") format("truetype"),
+    font-url("HelveticaNeueLTW01-56Italic.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HelveticaNeueMedium";
+  src: font-url("HelveticaNeueLTW01-65Medium.eot?#iefix");
+  src: font-url("HelveticaNeueLTW01-65Medium.eot?#iefix") format("eot"),
+    font-url("HelveticaNeueLTW01-65Medium.woff2") format("woff2"),
+    font-url("HelveticaNeueLTW01-65Medium.woff") format("woff"),
+    font-url("HelveticaNeueLTW01-65Medium.ttf") format("truetype"),
+    font-url("HelveticaNeueLTW01-65Medium.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HelveticaNeueBold";
+  src: font-url("HelveticaNeueLTW01-75Bold.eot?#iefix");
+  src: font-url("HelveticaNeueLTW01-75Bold.eot?#iefix") format("eot"),
+    font-url("HelveticaNeueLTW01-75Bold.woff2") format("woff2"),
+    font-url("HelveticaNeueLTW01-75Bold.woff") format("woff"),
+    font-url("HelveticaNeueLTW01-75Bold.ttf") format("truetype"),
+    font-url("HelveticaNeueLTW01-75Bold.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-size: 16px;
+  font-family: "HelveticaNeue";
+  color: $default-color;
+  padding: 0 !important;
+  height: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: "HelveticaNeueThin";
+  font-weight: normal;
+  font-size: 40px;
+  letter-spacing: 0;
+  margin-bottom: 9px;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: normal;
+  letter-spacing: 0;
+}
+
+h3 {
+  font-size: 17px;
+  line-height: 25px;
+  font-weight: normal;
+  letter-spacing: 0;
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: bold;
+  letter-spacing: 0;
+}
+
+.container-xl {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+// Overriding TF-base since it only sets the left margin.  Not sure why.
+.row {
+  margin-left: inherit;
+  margin-right: inherit;
+}
+
+// Avoids bug in Safari that fights with Bootstrap row
+.row:before, .row:after {width:0px; height:0px;}
+
+
+.z-1 {
+  z-index: 1;
+}
+
+.admin-icon {
+  margin-left: 24px;
+}
+
+.faqs-icon {
+  margin-left: 24px;
+}
+
+.settings-icon {
+  margin-left: 24px;
+}
+
+.admin-icon:hover {
+  cursor: pointer;
+}
+
+.faqs-icon:hover {
+  cursor: pointer;
+}
+
+.settings-icon:hover {
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+a, a:visited, a:hover {
+  color: #1E8AE7;
+  font-family: "HelveticaNeueBold";
+}
+
+a.footer-links {
+  font-size: 16px;
+  font-family: "HelveticaNeueThin";
+  margin: 10px;
+  color: white;
+}
+
+a.logout-link.header  {
+  color: #4A494A;
+  margin-right: 20px;
+  font-size: 14px;
+
+  &:hover {
+    font-family: "HelveticaNeueMedium";
+  }
+}
+
+.bold {
+  font-family: "HelveticaNeueBold";
+}
+
+.header {
+  font-family: "HelveticaNeueMedium";
+}
+
+.page-header {
+  margin-top: 34px;
+  margin-bottom: 15px;
+}
+
+.resource.active {
+  padding-top: 22px;
+  border: none;
+}
+
+.service-hub-row {
+  padding: .75rem 0 .75rem 0;
+  border-bottom: 1px solid $light-gray;
+  font-size: 13px;
+
+
+  &.service-hub-header-row {
+    font-family: "HelveticaNeueMedium";
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
+
+.error {
+  color: $tf-red;
+}
+
+.alert {
+  margin-bottom: 0;
+  font-family: "HelveticaNeueMedium";
+  font-size: 1.25rem;
+  border: 0;
+  color: $tf-red;
+}
+
+.spacer {
+  border: 2px solid #E71316;
+  max-width: 115px;
+  background-color: #E71316;
+  margin: 0px auto 20px auto;
+}
+
+.btn-simple:focus, .btn-simple:active {
+  outline: none;
+  border: 0;
+  box-shadow: none !important;
+}
+
+
+// Responsive //
+
+
+@media only screen and (min-width: 768px) {
+  h1 {
+    margin-bottom: 11px;
+  }
+
+  h2 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  h3 {
+    font-size: 22px;
+    line-height: 27px;
+  }
+
+  h4 {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .container-xl {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  // Shared css b/w instruments page and literature page and admin page
+  .resource.active {
+    padding: 1rem 1rem;
+    background-color: #fff;
+    border: 1px solid $light-gray;
+    border-radius: 0.25rem;
+    line-height: 1rem;
+    margin-top: 30px;
+  }
+
+  .spacer {
+    margin: 20px auto;
+  }
+
+  .service-hub-data-section {
+    padding-left: 1rem;
+  }
+
+  .service-hub-row {
+    padding: .75rem 0 .75rem .75rem;
+  }
+
+}
+
+@media screen and (max-width: 395px) {
+  a.footer-links {
+    margin: 8px;
+  } 
+}
+
+@media screen and (max-width: 379px) {
+  a.footer-links {
+    margin: 4px;
+  } 
+}
+

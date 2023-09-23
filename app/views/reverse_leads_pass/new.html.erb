@@ -1,0 +1,42 @@
+<div class="leads-pass">
+
+	<div class="lit-library-header text-center">
+  <h2>New Instrument Lead Pass</h2>
+  <div class="w-100 spacer"></div><br/><br/>
+</div>
+      <%= form_with url: leads_pass_path, method: "POST", local: true, data: { leads_pass_form: "" } do |f| %>
+        <div class="leads-pass-form-container">
+          <%= f.label :first_name, "First name:", id: "left" %>
+          <%= f.text_field :first_name, class: "left" %>
+          <%= f.label :last_name, "Last name:", id: "right" %>
+          <%= f.text_field :last_name, class: "right" %>
+          <%= f.label :company, "Organization:", id: "left" %>
+          <%= f.text_field :company, class: "left" %>
+          <%= f.label :position, "Position:", id: "right" %>
+          <%= f.text_field :position, class: "right" %>
+          <%= f.label :phone, "Phone:", id: "left" %>
+          <%= f.text_field :phone, class: "left" %>
+          <%= f.label :email, "Email:", id: "right" %>
+          <%= f.text_field :email, class: "right" %>
+          <%= f.label :region, "Region:" %>
+          <%= f.select :region, ["NA"], {}, style: "width: 100%" %>
+          <%= f.label :country, "Country:" %>
+          <%= f.select :country, ["Canada","United States"], {}, style: "width: 100%" %>
+          <%= f.label :state, "State:" %>
+          <%= f.text_field :state, class: "left" %>
+		  <%= f.label :city, "City:" %>
+          <%= f.text_field :city, class: "right" %>
+		<%= f.label :division, "Division:" %>
+          <%= f.select :division, ["BID","CSD","GSD","GSD - GTS","Not sure"], {}, style: "width: 100%" %>
+		  <%= f.label :notes, "New instrument(s) interested in:", id: "new_instruments" %>
+          <%= f.text_area :new_instruments %>
+          <%= f.label :notes, "Notes:", id: "notes" %>
+          <%= f.text_area :notes %>
+          <div id="current-user-settings">
+            <%= render 'shared/current_sender_settings' %>
+            <%= f.submit "Send", class: "btn btn-danger", data: { lead_submit_btn: "" } %>
+          </div>
+        </div>
+      <% end %>
+
+</div>

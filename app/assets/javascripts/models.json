@@ -1,0 +1,680 @@
+{
+  "TC1": {
+    "name": "TC1 DNA Thermal Cycler"
+  },
+  "310": {
+    "name": "Applied Biosystems 310 Genetic Analyzer"
+  },
+  "377": {
+    "name": "Applied Biosystems 377 Genetic Analyzer"
+  },
+  "480": {
+    "name": "Orbitrap Exploris 480 Mass Spectrometer"
+  },
+  "645": {
+    "name": "GeneChip™ Hybridization Oven 645"
+  },
+  "1700": {
+    "name": "Applied Biosystems 1700\nChemiluminescent\nMicroarray Analyzer"
+  },
+  "2400": {
+    "name": "GeneAmp PCR System 2400 Thermal Cycler"
+  },
+  "2700": {
+    "name": "Applied Biosystems 2700 Thermal Cycler"
+  },
+  "2720": {
+    "name": "Applied Biosystems 2720 Thermal Cycler"
+  },
+  "3400": {
+    "name": "Applied Biosystems 3400 DNA Synthesizer"
+  },
+  "3500": {
+    "name": "Applied Biosystems 3500 Genetic Analyzer"
+  },
+  "3700": {
+    "name": "Applied Biosystems 3700 DNA Analyzer"
+  },
+  "3730": {
+    "name": "Applied Biosystems 3730 DNA Analyzer"
+  },
+  "3900": {
+    "name": "Applied Biosystems 3900 DNA Synthesizer"
+  },
+  "5500": {
+    "name": "5499 Genetic Analysis System"
+  },
+  "5700": {
+    "name": "GeneAmp 5700 Sequence Detection System"
+  },
+  "6100": {
+    "name": "6099 Nucleic Acid PrepStation"
+  },
+  "6700": {
+    "name": "6699 Automated Nucleic Acid Workstation"
+  },
+  "7000": {
+    "name": "Applied Biosystems 7000 Real-time PCR System"
+  },
+  "7300": {
+    "name": "Applied Biosystems 7300 Real-time PCR System"
+  },
+  "7500": {
+    "name": "Applied Biosystems 7500 Real-time PCR System"
+  },
+  "7700": {
+    "name": "Applied Biosystems 7000 Real-time PCR System"
+  },
+  "7900": {
+    "name": "Applied Biosystems 7900 Real-Time PCR System"
+  },
+  "8100": {
+    "name": 8100
+  },
+  "8200": {
+    "name": "Applied Biosystems 8200 Cellular Detection System"
+  },
+  "8909": {
+    "name": "8908 Nucleid Acid Synthesis System"
+  },
+  "9600": {
+    "name": "GeneAmp PCR System 9600 Thermal Cycler"
+  },
+  "9700": {
+    "name": "GeneAmp PCR System 9700 Fast Thermal Cycler"
+  },
+  "9800": {
+    "name": "GeneAmp PCR System 9800 Fast Thermal Cycler"
+  },
+  "140C": {
+    "name": "Procise® Protein Sequencing System - Model 140C Microgradient Delivery System"
+  },
+  "3100-16": {
+    "name": "Applied Biosystems 3100 Genetic Analyzer"
+  },
+  "3100-4": {
+    "name": "Applied Biosystems 3100 Genetic Analyzer"
+  },
+  "3130-16": {
+    "name": "Applied Biosystems 3130 Genetic Analyzer"
+  },
+  "3130-4": {
+    "name": "Applied Biosystems 3130 Genetic Analyzer"
+  },
+  "34X": {
+    "name": "34X"
+  },
+  "3500DX": {
+    "name": "Applied Biosystems 3500 Genetic Analyzer"
+  },
+  "3500DXCS2": {
+    "name": "Applied Biosystems 3500 Genetic Analyzer"
+  },
+  "3500XL": {
+    "name": "Applied Biosystems 3500xl Genetic Analyzer"
+  },
+  "3500XLDX": {
+    "name": "Applied Biosystems 3500xl Genetic Analyzer"
+  },
+  "3500XLDXCS2": {
+    "name": "Applied Biosystems 3500xl Genetic Analyzer"
+  },
+  "370A/373A": {
+    "name": "Applied Biosystems 370A/373A DNA Sequencer"
+  },
+  "3730-48": {
+    "name": "Applied Biosystems 3730 DNA Analyzer"
+  },
+  "3730-96": {
+    "name": "Applied Biosystems 3730 DNA Analyzer"
+  },
+  "3730XLUPG": {
+    "name": "Applied Biosystems 3730XL DNA Analyzer"
+  },
+  "381A/391": {
+    "name": "Applied Biosystems 381A DNA Synthesizer"
+  },
+  "392/394": {
+    "name": "Applied Biosystems 392/394 DNA Synthesizer"
+  },
+  "431A": {
+    "name": "Applied Biosystems 431A Peptide Synthesizer"
+  },
+  "432A": {
+    "name": "Applied Biosystems 432A Peptide Synthesizer"
+  },
+  "433A": {
+    "name": "Applied Biosystems 433A Peptide Synthesizer"
+  },
+  "49X": {
+    "name": "PROCISE 49X cLC Protein Sequencing System"
+  },
+  "49X-CLC": {
+    "name": "PROCISE 49X cLC Protein Sequencing System"
+  },
+  "5500 W": {
+    "name": "5500 W Buffer G"
+  },
+  "5500XL": {
+    "name": "5500xl Genetic Analyzer"
+  },
+  "5500XL W": {
+    "name": "5500xl Genetic Analyzer"
+  },
+  "7500 FAST": {
+    "name": "Applied Biosystems 7500 Fast Real-Time PCR System"
+  },
+  "7500-FAST": {
+    "name": "Applied Biosystems 7500 Fast Real-Time PCR System"
+  },
+  "7500-FASTDX": {
+    "name": "Applied Biosystems 7500 Fast Dx Real-Time PCR Instrument"
+  },
+  "7900HT": {
+    "name": "Applied Biosystems 7900HT Real-Time PCR System"
+  },
+  "7900HT W/ROBOT": {
+    "name": "Applied Biosystems 7900HT Real-Time PCR System"
+  },
+  "9700-384AUTOLID": {
+    "name": "GeneAmp™ PCR System 9700 Fast Thermal Cycler"
+  },
+  "9700-384WELL": {
+    "name": "Applied Biosystems 9700 Thermal Cycler"
+  },
+  "9700-60WELL": {
+    "name": "Applied Biosystems 9700 Thermal Cycler"
+  },
+  "9700-96WELL": {
+    "name": "Applied Biosystems 9700 Thermal Cycler"
+  },
+  "9700-96WELLDUAL": {
+    "name": "Applied Biosystems 9700 Thermal Cycler"
+  },
+  "9700-DUALFB": {
+    "name": "Applied Biosystems 9700 Thermal Cycler"
+  },
+  "9800-96WELL": {
+    "name": "GeneAmp™ PCR System 9800 Fast Thermal Cycler"
+  },
+  "ACCUFILL": {
+    "name": "Applied Biosystems OpenArray™ AccuFill™ System"
+  },
+  "ACUFILQS12K": {
+    "name": "Applied Biosystems OpenArray™ AccuFill™ System"
+  },
+  "ARCTURUSXT": {
+    "name": "Applied Biosystems ArcturusXT™ Laser Capture Microdissection (LCM) System"
+  },
+  "ATC96": {
+    "name": "Applied Biosystems Automated Thermal Cycler (ATC)"
+  },
+  "ATTUNE": {
+    "name": "Invitrogen Attune NxT Acoustic Focusing Cytometer"
+  },
+  "ATTUNEAS": {
+    "name": "Invitrogen Attune NxT Acoustic Focusing Cytometer Autosampler"
+  },
+  "ATTUNEB": {
+    "name": "Invitrogen Attune NxT Acoustic Focusing Cytometer"
+  },
+  "ATTUNEBRBVBY": {
+    "name": "Invitrogen Attune NxT Acoustic Focusing Cytometer"
+  },
+  "ATTUNEBRVBVY": {
+    "name": "Invitrogen Attune NxT Acoustic Focusing Cytometer"
+  },
+  "ATTUNEBVRY": {
+    "name": "Invitrogen Attune NxT Acoustic Focusing Cytometer"
+  },
+  "AUTO": {
+    "name": "Applied Biosystems™ GeneChip™ Scanner 3000 7G AutoLoader Carousel"
+  },
+  "AUTODX": {
+    "name": "GeneChip™ AutoLoader"
+  },
+  "AUTOLOADER": {
+    "name": "Applied Biosystems™ QuantStudio™ 3D Digital PCR Chip Loader"
+  },
+  "AUTOMATE": {
+    "name": "Applied Biosystems AutoMate Nucleic Acid Extraction System"
+  },
+  "AUTOMATE EXPRESS": {
+    "name": "Applied Biosystems AutoMate Express™ Nucleic Acid Extraction System"
+  },
+  "BAX-Q7": {
+    "name": "BAX™ System Q7"
+  },
+  "BIOCAD": {
+    "name": "BioCAD System"
+  },
+  "BIOCAD700E": {
+    "name": "BioCAD System"
+  },
+  "BIOLIMS": {
+    "name": "BIOLIMS"
+  },
+  "BP4100": {
+    "name": "BenchPro™ 4100 Plasmid Purification System"
+  },
+  "BSD1000": {
+    "name": "BSD 1000 System"
+  },
+  "BSD600": {
+    "name": "BSD 600 System"
+  },
+  "COUNTESS": {
+    "name": "Invitrogen Countess Automated Cell Counter"
+  },
+  "COUNTESSII": {
+    "name": "Invitrogen Countess II Automated Cell Counter"
+  },
+  "COUNTESSIIFL": {
+    "name": "Invitrogen Countess II FL Automated Cell Counter"
+  },
+  "CSG1": {
+    "name": "CSG1"
+  },
+  "CX5PLATFORM": {
+    "name": "Thermo Scientific CellInsight CX5 High Content Screening (HCS) Platform"
+  },
+  "CX5READER": {
+    "name": "Thermo Scientific CellInsight CX5 High Content Screening (HCS) Platform"
+  },
+  "CX7PLATFORM": {
+    "name": "Thermo Scientific CellInsight CX7 High Content Analysis Platform"
+  },
+  "CX7READER": {
+    "name": "Thermo Scientific CellInsight CX7 LZR High Content Analysis Platform"
+  },
+  "DELL COMPUTER": {
+    "name": "Dell computer"
+  },
+  "EGEL": {
+    "name": "Invitrogen E-Gel EX Agarose Gel"
+  },
+  "EGEL IMAGER BLUELIGH": {
+    "name": "Invitrogen E-Gel EX Agarose Gel"
+  },
+  "EGEL IMAGER CAMERA": {
+    "name": "Invitrogen E-Gel EX Agarose Gel"
+  },
+  "EGEL IMAGER UV LIGH": {
+    "name": "Invitrogen E-Gel EX Agarose Gel"
+  },
+  "EMULSIFIER": {
+    "name": "SOLiD™ EZ Bead™ Emulsifier"
+  },
+  "ES": {
+    "name": "Ion Torrent Ion OneTouch ES (Enrichment System)"
+  },
+  "ESDX": {
+    "name": "Ion Torrent Ion OneTouch ES (Enrichment System)"
+  },
+  "EVOSFLAUTO": {
+    "name": "Invitrogen EVOS FL Auto Imaging System"
+  },
+  "EVOSFLAUTO2D": {
+    "name": "Invitrogen EVOS FL 2D Auto Imaging System"
+  },
+  "EVOSFLCOLOR": {
+    "name": "Invitrogen EVOS™ FL Color Cell Imaging System"
+  },
+  "EVOSFLMONO": {
+    "name": "Invitrogen EVOS™ FL Mono Cell Imaging System"
+  },
+  "EVOSINCUBATOR": {
+    "name": "Invitrogen EVOS Onstage Incubator"
+  },
+  "EVOSM5000": {
+    "name": "Invitrogen EVOS M5000 Cell Imaging System"
+  },
+  "EVOSXL": {
+    "name": "Invitrogen EVOS XL Imaging System"
+  },
+  "EVOSXLCORE": {
+    "name": "Invitrogen EVOS XL Core Imaging System"
+  },
+  "EZBEAD AMPLIFIER": {
+    "name": "SOLiD EZ Bead family"
+  },
+  "EZBEAD ENRICHER": {
+    "name": "SOLiD EZ Bead family"
+  },
+  "FLOID": {
+    "name": "Invitrogen FLoid Cell Imaging Station"
+  },
+  "FS450": {
+    "name": "GeneChip™ Fluidics Station 450"
+  },
+  "FS450DX": {
+    "name": "GeneChip™ Fluidics Station 450 Dx"
+  },
+  "GC3000": {
+    "name": "Applied Biosystems GeneChip System 3000Dx"
+  },
+  "GC30007G": {
+    "name": "Applied Biosystems GeneChip System 3000Dx"
+  },
+  "GC3000DX": {
+    "name": "Applied Biosystems GeneChip System 3000Dx"
+  },
+  "GENEXUS": {
+    "name": "Ion Torrent Genexus System"
+  },
+  "GT-FS": {
+    "name": "Applied Biosystems™\nGeneChip™ Fluidics Station 449"
+  },
+  "GTMCSCAN": {
+    "name": "GeneTitan Multi-Channel (MC) Instrument"
+  },
+  "HCA01CX5": {
+    "name": "Thermo Scientific™\nCellInsight™ CX5 High Content Screening (HCS) Platform"
+  },
+  "IB1500FL": {
+    "name": "Invitrogen iBright CL1500 Imaging System"
+  },
+  "IB750": {
+    "name": "Invitrogen iBright 750 Imaging System"
+  },
+  "IBRIGHTCL": {
+    "name": "Invitrogen iBright CL1000 Imaging System"
+  },
+  "IBRIGHTFL": {
+    "name": "Invitrogen iBright FL1000 Imaging System"
+  },
+  "IN SITU": {
+    "name": "GeneAmp® In Situ\nPCR System 1000"
+  },
+  "INTEGRAL": {
+    "name": "Applied Biosystems Scout Multi-Column Selector for BioCad Integral 100Q"
+  },
+  "IONCHEF": {
+    "name": "Ion Chef Instrument"
+  },
+  "IONPGM": {
+    "name": "Ion Personal Genome Machine (PGM) System"
+  },
+  "IONPGM2": {
+    "name": "Ion Personal Genome Machine (PGM) System"
+  },
+  "IONPGMSYS": {
+    "name": "Ion Personal Genome Machine (PGM) System"
+  },
+  "IONPROTON": {
+    "name": "Ion Personal Proton Machine System"
+  },
+  "IONS5": {
+    "name": "Ion GeneStudio S5 System"
+  },
+  "IONS5PLUS": {
+    "name": "Ion GeneStudio S5 Plus System"
+  },
+  "IONS5PRIME": {
+    "name": "Ion GeneStudio S5 Prime System"
+  },
+  "IONS5XL": {
+    "name": "Ion S5 XL System"
+  },
+  "IONSERVER": {
+    "name": "Ion Server"
+  },
+  "IPREP": {
+    "name": "iPrep Kit"
+  },
+  "IRLCLSRVR": {
+    "name": "Ion Reporter™ Server System"
+  },
+  "KF24DW": {
+    "name": "Thermo Scientific KingFisher™ Presto Purification System"
+  },
+  "KF96DW": {
+    "name": "Thermo Scientific KingFisher™ Presto Purification System"
+  },
+  "KFDUOPRIME": {
+    "name": "Thermo Scientific KingFisher™ Duo Prime Purification System"
+  },
+  "KFP24DW": {
+    "name": "Thermo Scientific KingFisher™ Presto Purification System"
+  },
+  "LIBUILDER": {
+    "name": "Applied Biosystems Library Builder™ System"
+  },
+  "MFUGEDX120": {
+    "name": "Ion Torrent™ Ion Chip™ Minifuge, 120 V"
+  },
+  "MINIAMP": {
+    "name": "Applied Biosystems MiniAmp Thermal Cycler"
+  },
+  "MINIAMPPLUS": {
+    "name": "Applied Biosystems MiniAmp Plus Thermal Cycler"
+  },
+  "MME-24": {
+    "name": "Applied Biosystems MagMAX Express Magnetic Particle Processor"
+  },
+  "MME-96": {
+    "name": "Applied Biosystems MagMAX Express Magnetic Particle Processor"
+  },
+  "MME-96DW": {
+    "name": "Applied Biosystems MagMAX Express Magnetic Particle Processor"
+  },
+  "MULTISKT": {
+    "name": "Multiskan Sky Microplate Spectrophotometer"
+  },
+  "NDONE": {
+    "name": "Thermo Scientific™ NanoDrop™ One"
+  },
+  "NDONEC": {
+    "name": "Thermo Scientific™ NanoDrop™ OneC"
+  },
+  "NEON": {
+    "name": "Invitrogen Neon Transfection System"
+  },
+  "NONAB": {
+    "name": "NONAB"
+  },
+  "NORTHSTAR": {
+    "name": "NorthStar™ HTS Workstation"
+  },
+  "ONETOUCH": {
+    "name": "Ion Torrent Ion OneTouch"
+  },
+  "ONETOUCH ES": {
+    "name": "Ion Torrent Ion OneTouch ES"
+  },
+  "ONETOUCH2": {
+    "name": "Ion Torrent Ion OneTouch 2 Instrument"
+  },
+  "OPEN-ARRAY": {
+    "name": "Applied Biosystems OpenArray Real-Time PCR Platform"
+  },
+  "ORBITROB": {
+    "name": "Thermo Scientific Orbitor RS2 Microplate Mover"
+  },
+  "ORBITROBQS": {
+    "name": "Thermo Scientific Orbitor RS2 Microplate Mover"
+  },
+  "OTDX": {
+    "name": "Thermo Scientific Orbitor RS2 Microplate Mover"
+  },
+  "PATHATRIX": {
+    "name": "Applied Biosystems Pathatrix Auto Instrument"
+  },
+  "PGMDX": {
+    "name": "Ion PGM Dx Instrument System"
+  },
+  "PIONEER": {
+    "name": "Pioneer Peptide Synthesis System"
+  },
+  "PIXCELL II": {
+    "name": "Pixcell II Laser capture microdissection (LCM) System"
+  },
+  "POWEREASE": {
+    "name": "PowerEase 300W Power Supply"
+  },
+  "POWEREASE90W": {
+    "name": "PowerEase 90W Power Supply"
+  },
+  "PROFLEX": {
+    "name": "Applied Biosystems ProFlex PCR System"
+  },
+  "PROFLEX 3X 32-WELL": {
+    "name": "Applied Biosystems ProFlex PCR System"
+  },
+  "PROFLEX BASE": {
+    "name": "Applied Biosystems ProFlex PCR System"
+  },
+  "PROFLEX384 WELL DUAL": {
+    "name": "Applied Biosystems ProFlex PCR System"
+  },
+  "PROFLEX384WDUAL": {
+    "name": "Applied Biosystems ProFlex PCR System"
+  },
+  "PROFLEX96WDUAL": {
+    "name": "Applied Biosystems ProFlex PCR System"
+  },
+  "PROFLEX96WELL": {
+    "name": "Applied Biosystems ProFlex PCR System"
+  },
+  "PROFLEXDUALFLAT": {
+    "name": "Applied Biosystems ProFlex PCR System"
+  },
+  "QFLEX": {
+    "name": "Applied Biosystems QuantStudio 1 Real-time PCR System"
+  },
+  "QS3FAST": {
+    "name": "Applied Biosystems QuantStudio 3 Real-time PCR System"
+  },
+  "QS3STD": {
+    "name": "Applied Biosystems QuantStudio 3 Real-time PCR System"
+  },
+  "QS5384": {
+    "name": "Applied Biosystems QuantStudio 5 Real-time PCR System"
+  },
+  "QS5FAST": {
+    "name": "Applied Biosystems QuantStudio 5 Real-time PCR System"
+  },
+  "QS5STD": {
+    "name": "Applied Biosystems QuantStudio 5 Real-time PCR System"
+  },
+  "QSDX": {
+    "name": "Applied Biosystems QuantStudio Dx Real-time PCR Instrument"
+  },
+  "QSROB": {
+    "name": "Twister™ Automation Robot"
+  },
+  "QSTUDIO12K": {
+    "name": "Applied Biosystems QuantStudio 12 Flex Real-time PCR System"
+  },
+  "QSTUDIO12KOA": {
+    "name": "Applied Biosystems QuantStudio 12 Flex Real-time PCR System"
+  },
+  "QSTUDIO12KOA BLOCK": {
+    "name": "Applied Biosystems QuantStudio 12 Flex Real-time PCR System"
+  },
+  "QSTUDIO3D": {
+    "name": "Applied Biosystems QuantStudio 3D Digital PCR Instrument"
+  },
+  "QSTUDIO6FLEX": {
+    "name": "Applied Biosystems QuantStudio 6 Flex Real-time PCR System"
+  },
+  "QSTUDIO6PRO": {
+    "name": "Applied Biosystems QuantStudio 6 Pro real-time PCR system"
+  },
+  "QSTUDIO7FLEX": {
+    "name": "Applied Biosystems QuantStudio 7 Flex Real-time PCR System"
+  },
+  "QSTUDIO7PRO": {
+    "name": "Applied Biosystems QuantStudio 7 Pro real-time PCR system"
+  },
+  "RHID": {
+    "name": "Applied Biosystems RapidHIT ID System"
+  },
+  "SEQSTUDIO": {
+    "name": "Applied Biosystems SeqStudio Genetic Analyzer"
+  },
+  "SIMPLIAMP": {
+    "name": "Applied Biosystems SimpliAmp Thermal Cycler"
+  },
+  "SOLID4": {
+    "name": "SOLiD™ 4 System"
+  },
+  "SOLIDCOVARIS": {
+    "name": "Covaris M220 Focused-ultrasonicator"
+  },
+  "SOLIDEMULS": {
+    "name": "SOLiD™ EZ Bead™ Emulsifier"
+  },
+  "SOLIDHYDRO": {
+    "name": "SOLiD® Next-Generation Sequencing Hydroshear DNA Shearing Device"
+  },
+  "STEPONE": {
+    "name": "Applied Biosystems StepOne Real-Time PCR System"
+  },
+  "STEPONEPLUS": {
+    "name": "Applied Biosystems StepOnePlus Real-Time PCR System"
+  },
+  "TALI": {
+    "name": "Invitrogen Tali Image-based Cytometer"
+  },
+  "TWISTER-7900": {
+    "name": "Twister™ Automation Robot"
+  },
+  "ULTRATURRAX": {
+    "name": "Applied Biosystems Ultra-Turrax Tube Drive from IKA"
+  },
+  "VARIOSKAN40": {
+    "name": "Varioskan LUX multimode microplate reader"
+  },
+  "VARIOSKAN45": {
+    "name": "Varioskan LUX multimode microplate reader"
+  },
+  "VERITAS": {
+    "name": "Veritas Laser capture microdissection (LCM) System"
+  },
+  "VERITI": {
+    "name": "Applied Biosystems Veriti Thermal Cycler"
+  },
+  "VERITIDX": {
+    "name": "Applied Biosystems Veriti Dx Thermal Cycler"
+  },
+  "VIIA7": {
+    "name": "Applied Biosystems ViiA 7 Real-time PCR System"
+  },
+  "VIIA7BLOCK": {
+    "name": "Applied Biosystems ViiA 7 Real-time PCR System"
+  },
+  "VIIA7DX": {
+    "name": "Applied Biosystems ViiA 7 Dx Real-time PCR System"
+  },
+  "VIIA7HTCOVER": {
+    "name": "Applied Biosystems ViiA 7 Real-time PCR System"
+  },
+  "VIIA7ROB": {
+    "name": "Applied Biosystems ViiA 7 Real-time PCR System"
+  },
+  "WSDXV2": {
+    "name": "GeneChip™ System 3000Dx v.2"
+  },
+  "WS-GTMC": {
+    "name": "GeneTitan Multi-Channel (MC) Instrument"
+  },
+  "WS-HTAPS": {
+    "name": "Applied Biosystems™\nGeneChip™ Scanner 3000 7G System"
+  },
+  "WS-SYS": {
+    "name": "Applied Biosystems™\nGeneChip™ Scanner 3000 7G System"
+  },
+  "WS-SYSDX": {
+    "name": "GeneChip™ System 3000Dx"
+  },
+  "XTILIVE": {
+    "name": "Thermo Scientific ArrayScan instrument"
+  },
+  "XTIPLATFORM": {
+    "name": "Thermo Scientific ArrayScan instrument"
+  },
+  "XTISOLO": {
+    "name": "Thermo Scientific ArrayScan instrument"
+  }
+}

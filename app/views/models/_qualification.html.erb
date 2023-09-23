@@ -1,0 +1,57 @@
+<div class="row w-100 service-hub-row" data-controller="details">
+  <div class="d-flex flex-nowrap w-100 primary-info">
+    <div class="sku">
+      <%= service.sku %>
+    </div>
+    <div class="name">
+      <%= service.description %>
+    </div>
+    <div class="type">
+      <%= service.type %>
+    </div>
+    <div class="price">
+      <% service.filtered_prices.each do |price| %>
+        <div>
+          <%= format_price(price, service.filtered_prices) %>
+        </div>
+      <% end %>
+    </div>
+    <a href="#" class="show-details" data-action="click->details#toggle">
+      Show Details
+    </a>
+  </div>
+
+  <div class="details-area w-100 mt-3 educational-services" data-details-target="toggle">
+    <div class="d-flex mt-4 mb-3">
+      <div class="whats-included">
+        <div class="bold detail-header">
+          What's Included
+        </div>
+        <div class="pr-4">
+          <%= service.contents %>
+        </div>
+      </div>
+
+      <div class="other-details d-flex w-100">
+        <div class="d-flex other-details-group w-100">
+          <div class="mb-4 detail-1 w-50">
+            <div class="pricing-condition bold detail-header">
+              Pricing Condition
+            </div>
+            <div>
+              <%= service.pricing_condition %>
+            </div>
+          </div>
+          <div class="mb-4 detail-2 w-50">
+            <div class="product-manager bold detail-header">
+              Product Manager
+            </div>
+            <div>
+              <%= service.product_manager %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

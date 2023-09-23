@@ -1,0 +1,79 @@
+<div class="row w-100 service-hub-row" data-controller="details">
+  <div class="d-flex flex-nowrap w-100 primary-info">
+    <div class="sku">
+      <%= service.sku %>
+    </div>
+    <div class="name">
+      <%= service.description %>
+    </div>
+    <div class="price">
+      <% service.filtered_prices.each do |price| %>
+        <div>
+          <%= format_price(price, service.filtered_prices) %>
+        </div>
+      <% end %>
+    </div>
+    <a href="#" class="show-details" data-action="click->details#toggle">
+      Show Details
+    </a>
+  </div>
+
+  <div class="details-area w-100 mt-3" data-details-target="toggle">
+    <div class="d-flex mt-4 mb-3">
+      <div class="whats-included">
+        <div class="bold detail-header">
+          What's Included
+        </div>
+        <div class="pr-4">
+          <ul class="service-contents-list">
+            <% service.contents.each do |content| %>
+              <li>
+                <%= content %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+
+      <div class="other-details d-flex w-100">
+        <div class="d-flex flex-column details-col">
+          <div class="mb-4 detail-1">
+            <div class="pricing-condition bold detail-header">
+              Pricing Condition
+            </div>
+            <div>
+              <%= service.pricing_condition %>
+            </div>
+          </div>
+          <div class="mb-4 mt-2">
+            <div class="pricing-condition bold detail-header">
+              Pricing Description
+            </div>
+            <div>
+              <%= service.description %>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column details-col">
+          <div class="mb-4 detail-1">
+            <div class="product-manager bold detail-header">
+              Product Manager
+            </div>
+            <div>
+              <%= service.product_manager %>
+            </div>
+          </div>
+          <div class="mb-4 mt-2">
+            <div class="type bold detail-header">
+              Type
+            </div>
+            <div>
+              <%= service.type %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

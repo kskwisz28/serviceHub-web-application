@@ -1,0 +1,7 @@
+<% if instrument_presenter %>
+  <h4>Literature</h4>
+
+  <div class="d-flex flex-column resource requested-literature literature">
+    <%= render 'literature_section', locals: { literature: instrument_presenter.literatures } %>
+  </div>
+<% end %>

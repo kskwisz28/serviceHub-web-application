@@ -1,0 +1,474 @@
+.instrument {
+  .clear-search-area {
+    display: none
+  }
+
+  $image-height: 86px;
+  .instrument-image {
+    width: 86px;
+    min-width: 86px;
+    max-height: $image-height;
+    margin-right: 10px;
+    padding: 0;
+  }
+
+  .instrument-name {
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  &.header-area {
+    margin-bottom: 30px;
+    align-items: flex-start;
+    position: relative;
+    min-height: $image-height;
+  }
+
+  // Services
+
+  .packages, .standalone-services-data {
+    margin-bottom: 30px;
+  }
+
+  .detail-header {
+    margin-bottom: 0.75rem;
+    line-height: 18px;
+  }
+
+  .sku {
+    flex: 0 0 20%;
+    width: 100%;
+    max-width: 86px;
+    word-break: break-all;
+    padding-right: 12px;
+  }
+
+  .name {
+    flex: 0 0 40%;
+    width: 100%;
+    max-width: 110px;
+    padding-right: 20px;
+  }
+
+  .price {
+    flex: 0 0 20%;
+    width: 100%;
+    max-width: 100px;
+    margin-right: 20px;
+  }
+
+  .details {
+    flex: 0 0 20%;
+    width: 100%;
+  }
+
+
+  // Package Services
+  .packages {
+
+    .packages-area {
+      margin: 0 -1.125rem;
+      background-color: $pale-blue;
+
+      h4 {
+        margin-left: 20px;
+      }
+
+      .packages-data {
+        .service-hub-data-section {
+          padding-left: 18px;
+
+          .service-hub-row {
+            padding: .75rem 0 .75rem 0;
+          }
+
+          .show-details {
+            padding-right: 5px;
+          }
+        }
+
+        .details-area {
+          display: none;
+          font-size: 13px;
+
+          &.active {
+            display:flex;
+          }
+
+          .item-area {
+            flex: 1 0 60%;
+            width: 100%;
+            max-width: 286px;
+          }
+
+          .item-name {
+            padding-right: 12px;
+            word-break: break-all;
+          }
+
+          .package-contents-item-sku {
+            flex: 0 0 33%;
+            width: 100%;
+            max-width: 80px;
+          }
+
+          .sku-area {
+            flex: 0 0 20%;
+          }
+
+          .whats-included {
+            flex: 0 0 50%;
+  
+            .service-contents-list {
+              padding: 0;
+              margin: 0px 0 11px 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Standalone Services
+
+  .standalone-services {
+    .standalone-services-data {
+
+      .price {
+        flex: 0 0 20%;
+      }
+
+      .details {
+        flex: 0 0 20%;
+      }
+
+      .details-area {
+        display: none;
+        font-size: 14px;
+
+        &.active {
+          display:flex;
+        }
+
+        .whats-included {
+          flex: 0 0 50%;
+
+          .service-contents-list {
+            padding: 0;
+            margin: 0px 0 11px 16px;
+          }
+        }
+
+        .other-details .details-col {
+          flex: 0 0 50%;
+
+          .detail-1 {
+            min-height: 92px;
+          }
+        }
+
+        .type {
+          flex: 0 0 15%;
+        }
+      }
+    }
+  }
+
+  // Additional Services
+  .additional-services {
+
+    .service-hub-data-section {
+      margin-bottom: 3.125rem;
+    }
+
+    .sku {
+      flex: 0 0 19%;
+      padding-right: 0px;
+    }
+
+    .name {
+      flex: 0 0 25%;
+      padding-right: 0px;
+      max-width: 84px;
+      word-break: break-word;
+    }
+
+    .type {
+      flex: 0 0 15%;
+      margin-right: 10px;
+      min-width: 66px;
+    }
+
+    .price {
+      flex: 0 0 15%;
+      margin-right: 10px;
+    }
+
+    .details {
+      flex: 0 0 10%;
+    }
+
+    .details-area {
+      display: none;
+      font-size: 14px;
+
+      &.active {
+        display:flex;
+      }
+
+      .whats-included {
+        flex: 0 0 50%;
+      }
+
+    }
+
+    .qualification-services {
+
+      .details-area {
+
+        .whats-included {
+          flex: 0 0 62%;
+        }
+
+        .other-details-group {
+          flex-direction: column;
+          flex: 0 0 50%;
+        }
+      }
+    }
+
+    .educational-services {
+
+      .whats-included {
+        flex: 0 0 41%;
+      }
+
+      .other-details  {
+
+        .detail-header {
+          margin-bottom: .5rem;
+        }
+
+        .details-col-1, .details-col-2 {
+          flex: 0 0 50%;
+          min-width: 80px;
+
+          .detail-header {
+            min-height: 36px;
+          }
+        }
+
+        .details-col-3 {
+          flex: 0 0 50%;
+          min-width: 80px;
+        }
+
+        .detail {
+          min-height: 92px;
+        }
+      }
+    }
+
+  }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+  .instrument {
+    .clear-search-area {
+      display: flex;
+    }
+
+    $image-height: 200px;
+    .instrument-image {
+      width: 200px;
+      min-width: 200px;
+      height: $image-height;
+      min-height: $image-height;
+    }
+
+    .instrument-name {
+      padding: 11px;
+      margin: initial;
+      font-size: 26px;
+      line-height: 26px;
+    }
+
+    &.header-area {
+      min-height: $image-height;
+      .times-icon {
+        width: 10px;
+        margin-right: 12px;
+        margin-top: -7px;
+
+
+
+        svg {
+          fill: $med-gray;
+
+          &:focus {
+            outline: none;
+            border: none;
+          }
+        }
+      }
+    }
+
+
+    // Services
+
+    .packages, .standalone-services-data {
+      margin-bottom: 60px;
+    }
+
+    .sku {
+      max-width: 222px;
+      padding-right: 15px;
+    }
+
+    .name {
+      max-width: 460px;
+    }
+
+    .price {
+      max-width: 222px;
+    }
+
+    .details {
+      max-width: 200px;
+    }
+
+    .standalone-services{
+      .standalone-services-data {
+        .details-area {
+
+          .other-details .details-col {
+            .detail-1 {
+              min-height: auto;
+            }
+          }
+        }
+      }
+    }
+
+    // Package Services
+    .packages {
+
+      .packages-area {
+        padding: 0 1rem;
+        margin: 0;
+
+        h4 {
+          margin-left: 0px;
+        }
+
+
+        .packages-data {
+          .service-hub-data-section {
+            padding-left: 1rem;
+
+            .service-hub-row {
+              padding: .75rem 0 .75rem .75rem;
+            }
+          }
+
+          .details-area {
+            font-size: 14px;
+
+            .package-contents-item-sku {
+              max-width: 222px;
+              padding-right: 15px;
+            }
+
+            .item-area {
+              max-width: 663px;
+            }
+          }
+        }
+      }
+    }
+
+    // Standalone Services
+    .standalone-services {
+      .standalone-services-data {
+        .details-area {
+
+          .whats-included {
+            flex: 0 0 60%;
+          }
+        }
+      }
+    }
+
+    .additional-services {
+      .sku {
+        flex: 0 0 20%;
+      }
+
+      .name {
+        flex: 0 0 35%;
+        max-width: 460px;
+        padding-right: 20px;
+      }
+
+      .details-area {
+
+        .other-details .details-col {
+          flex-direction: row;
+        }
+      }
+
+      .qualification-services {
+
+        .details-area {
+
+          .whats-included {
+            flex: 0 0 54.5%;
+          }
+
+          .other-details {
+
+            .other-details-group {
+              flex-direction: row;
+
+              .detail-1, .detail-2 {
+                width: 170px;
+              }
+            }
+          }
+
+        }
+
+      }
+
+      .educational-services {
+
+        .whats-included {
+          flex: 0 0 54.5%;
+        }
+
+        .other-details  {
+          .details-col-1, .details-col-2, .details-col-3 {
+            height: auto;
+            max-width: 180px;
+
+            .detail-header {
+              min-height: auto;
+            }
+          }
+          .details-col-3 {
+            height: auto;
+            max-width: 140px;
+          }
+
+          .detail {
+            min-height: auto;
+          }
+        }
+      }
+    }
+  }
+}

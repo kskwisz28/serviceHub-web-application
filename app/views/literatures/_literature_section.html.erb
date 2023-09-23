@@ -1,0 +1,30 @@
+<% if locals[:link_name] %>
+  <h4 class="lit-section-header"><%= link_to locals[:link_name], '' %></h4>
+<% end %>
+
+<div class="service-hub-data-section" >
+  <div class="row w-100 service-hub-row service-hub-header-row">
+    <div class="name">Name</div>
+    <div class="type">Type</div>
+    <div class="region">Region</div>
+    <div class="link">Link</div>
+    <div class="attach">Attach</div>
+  </div>
+
+  <% if locals[:literature] %>
+    <% locals[:literature].each do |literature| %>
+      <div class="row w-100 service-hub-row">
+        <div class="name"><%= literature.title %></div>
+        <div class="type"><%= literature.type %></div>
+        <div class="region"><%= literature.region %></div>
+        <div class="link"><%= link_to "Open PDF", literature.url, target: '_blank' %></div>
+        <div class="attach">
+
+          <%= link_to email_message_path(email_message: { literature_asset_url: literature.url }), method: :put, remote: true, id: "literature-link-#{literature.url.gsub(/[^a-zA-Z0-9]/, "")}" do %>
+            <%= render 'shared/envelopes_for_row', locals: { envelope_closed: !current_email_message.literature_asset_urls.include?(literature.url) } %>
+          <% end %>
+          </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

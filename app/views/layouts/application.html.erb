@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ServiceHub</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path("favicon.ico") %>
+    <meta name="description" content="ThermoFisher Instruments ServiceHub">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0">
+    <%= stylesheet_link_tag("application", media: "all") %>
+    <%= javascript_include_tag("application") %>
+    <%= javascript_include_tag(GoogleAnalytics::JS_URL, async: true) %>
+  </head>
+
+  <body>
+    <div class="container-xl">
+      <div class="upper-banner d-flex align-items-center">
+        <div class="d-flex justify-content-between align-items-center w-100 p-2">
+          <%= link_to root_path do %>
+            <%= image_tag asset_path("logo-color.png"), width: "140", alt: "logo" %>
+          <% end %>
+
+          <div>
+		  <a href="/faq" style="color: #4a494a;">FAQ </a>
+            <% if current_user.is_admin? %>
+              <%= link_to(image_tag(asset_path("icons/admin-wrench.svg")), admins_home_path, :class=>"admin-icon") %>
+            <% end %>
+            <!-- image_tag asset_path("icons/faqs.svg"), alt: "faqs icon", class: "faqs-icon" %> -->
+			<!-- = link_to(image_tag(asset_path("icons/faqs.svg")), "https://servicehub.gss.tf/faq", :class=>"faqs-icon") %> -->
+
+            <%= image_tag asset_path("icons/gear.svg"), alt: "settings icon", class: "settings-icon", data: {toggle: :modal, target: "#userPrefsModal" } %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= render("layouts/site_alert") %>
+    <%= render("layouts/flash") %>
+
+    <div class="banner d-flex flex-column justify-content-between">
+      <div class="background-banner">
+      </div>
+      <div class="container-xl main-banner">
+        <div class="d-flex flex-column h-100 banner-content">
+          <div class="banner-text">
+            <h1>
+              ServiceHub
+            </h1>
+          </div>
+
+          <div class="subtitle">
+            Pricing and Literature Sales Tool
+          </div>
+        </div>
+
+        <div class="tab-container">
+          <ul class="w-100 d-flex justify-content-between flex-nowrap nav">
+            <div class="d-flex">
+              <%= content_tag(:li, class: (request.path == "/" || request.path == "/instruments" ? "d-flex justify-content-center align-items-center nav-item package-info active" : "d-flex justify-content-center align-items-center nav-item package-info")) do %>
+                <%= link_to "SKU Pricing", instruments_path, class: "nav-link" %>
+              <% end %>
+              <%= content_tag(:li, class: (request.path == "/literature" ? "d-flex justify-content-center align-items-center nav-item literature active" : "d-flex justify-content-center align-items-center nav-item literature")) do %>
+                <%= link_to "Literature", literature_path, class: "nav-link" %>
+              <% end %>
+              <%= content_tag(:li, class: (request.path == '/leads_pass' ? "d-flex justify-content-center align-items-center nav-item literature active" : "d-flex justify-content-center align-items-center nav-item literature")) do %>
+                <%= link_to "Leads Pass", leads_pass_path, class: "nav-link" %>
+              <% end %>
+			  <% if current_user.role == "service_sales" %>
+			  <%= content_tag(:li, class: (request.path == '/leads_pass' ? "d-flex justify-content-center align-items-center nav-item literature active" : "d-flex justify-content-center align-items-center nav-item literature")) do %>
+                <%= link_to "TEST", leads_pass_path, class: "nav-link" %>
+              <% end %>
+			  <% end %>
+            </div>
+
+            <div class="d-flex">
+              <%= content_tag(:li, class: (request.path == "/email_message" ? "d-flex justify-content-center align-items-center nav-item envelope-container float-right active" : "d-flex justify-content-center align-items-center nav-item envelope-container")) do %>
+                <%= render "shared/envelopes", locals: { envelope_closed: current_email_message.literature_asset_urls.any? } %>
+              <% end %>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-xl content">
+      <%= yield %>
+    </div>
+
+    <div class="footer d-flex text-center align-items-center justify-content-center">
+      <div class="px-3"><a href="/faq">FAQ</a>  &nbsp; &nbsp; &nbsp;|  &nbsp; &nbsp; &nbsp;<a href="/lsg_lifecycle_status">LSG Lifecycle Status</a>  &nbsp; &nbsp; &nbsp;|  &nbsp; &nbsp; &nbsp;
+        <%= link_to "Click here to ask questions or submit feedback", new_feedback_email_message_path, class: "feedback-link" %>
+		<br />
+		<br />
+		ServiceHub is owned and operated by GSS Marketing Operations. Contact us <a href="mailto:servicehub@thermofisher.com">here</a>.
+      </div>
+    </div>
+
+    <%= render(partial: "users/edit") %>
+
+    <div data-is-known-user="<%= is_known_user? %>">
+    </div>
+  </body>
+</html>

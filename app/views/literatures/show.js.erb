@@ -1,0 +1,27 @@
+// clear out old content in case this isn't user's first query.
+$("#query-result").empty();
+$("#query-result").removeClass("active");
+
+<%# only checking for instument b/c maybe instrument exists but no lit does. %>
+<% if @instrument %>
+  $("#query-result").addClass("active");
+  $("<%= escape_javascript(render("literature")) %>").appendTo("#query-result");
+  <%= render 'shared/query_results' %>
+<% elsif @instrument && !@literature.any? %>
+  setTimeout(function(){
+    <% if !@literature.any? %>
+      <%= render 'shared/query_results' %>
+      if ($("#query-result *").length === 0) {
+        $("<h2>Sorry, there is no literature for this instrument.</h2>").appendTo("#query-result");
+      }
+    <% end %>
+  }, 5000);
+<% else %>
+  // Wrapping in a setTimeout to avoid flashing this message right before the instrument renders.
+
+  setTimeout(function(){
+    if ($("#query-result *").length === 0) {
+      $("<h2>Sorry, that is not a valid model number or name.</h2>").appendTo("#query-result");
+    }
+  }, 5000);
+<% end %>

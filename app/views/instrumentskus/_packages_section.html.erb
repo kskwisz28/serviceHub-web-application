@@ -1,0 +1,89 @@
+<div class="d-flex flex-column w-100 packages">
+  <h2 class="text-center mt-2">Packages</h2>
+  <div class="w-100 spacer"></div>
+  <div class="packages-area">
+    <h4 class="mt-2"><%= locals[:name] %></h4>
+    <div class="d-flex flex-column mb-4 resource packages-data">
+      <div class="service-hub-data-section">
+        <div class="row w-100 service-hub-row service-hub-header-row">
+          <div class="sku">SKU</div>
+          <div class="name">Description</div>
+          <div class="price">Price</div>
+          <div class="details">Details</div>
+        </div>
+        <% locals[:services].each do |service| %>
+          <div class="row w-100 service-hub-row">
+            <div class="d-flex flex-nowrap w-100 primary-info">
+              <div class="sku"><%= service.sku %></div>
+              <div class="name"><%= service.name %></div>
+              <div class="price"><%= service.price %></div>
+              <%= link_to "Show Details", '', class: 'show-details' %>
+            </div>
+            <div class="details-area w-100 mt-3">
+              <% service[:contents].each_with_index do |item, index| %>
+                <div class="d-flex mt-4 mb-3">
+                  <div class="d-flex item-area">
+                    <div class="d-flex flex-column package-contents-item-sku">
+                      <div class="header detail-header mt-4 mb-3">
+                        Item #<%= index + 1 %>
+                      </div>
+                      <div class="item-name">
+                        <%= item.sku %>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <div class="header detail-header mt-4 mb-3">
+                        Description
+                      </div>
+                      <div class="item-name">
+                        <%= item.name %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-column details">
+                    <div class="header detail-header mt-4 mb-3">
+                      Quantity
+                    </div>
+                    <div class="quantity">
+                      <%= item.quantity %>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-column details">
+                    <div class="header detail-header mt-4 mb-3">
+                      Component Type
+                    </div>
+                    <div class="quantity">
+                      <% if item.component_type %>
+                        <%= item.component_type %>
+                      <% else %>
+                        <%= "Unknown" %>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+                <div class="whats-included mt-4 mb-3">
+                  <div class="bold detail-header">What's Included</div>
+                  <div class="pr-4">
+                    <ul class="service-contents-list">
+                      <% package_services = all_services(@instrument).select {|s| s.sku == item.sku } %>
+                      <% if package_services == [] %>
+                        <li>No further details available.</li>
+                      <% elsif package_services[0].contents == "Unknown" %>
+                        <li>No further details available.</li>
+                      <% elsif package_services[0].contents.is_a? Array %>
+                        <% package_services[0].contents.each do |content_item| %>
+                          <li><%= content_item %></li>
+                        <% end %>
+                      <% end %>
+                    </ul>
+                    <!-- end details-area -->
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

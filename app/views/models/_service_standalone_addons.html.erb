@@ -1,0 +1,62 @@
+<h2 class="text-center">
+  Service Plans
+</h2>
+
+<div class="w-100 spacer">
+</div>
+
+<div class="services-area">
+  <h4 class="mt-2">
+    Service Plans
+  </h4>
+
+  <div class="d-flex flex-column resource standalone-services-data">
+    <div class="service-hub-data-section">
+      <div class="row w-100 service-hub-row service-hub-header-row">
+        <div class="sku">
+          SKU
+        </div>
+        <div class="name">
+          Description
+        </div>
+        <div class="price">
+          Price
+        </div>
+        <div class="details">
+          Details
+        </div>
+      </div>
+
+      <% presenter.standalones.each do |service| %>
+        <%= render("models/service", service: service) %>
+      <% end %>
+    </div>
+  </div>
+
+  <h4 class="mt-2">
+    Add-Ons
+  </h4>
+
+  <div class="d-flex flex-column resource standalone-services-data">
+    <div class="service-hub-data-section">
+      <div class="row w-100 service-hub-row service-hub-header-row">
+        <div class="sku">
+          SKU
+        </div>
+        <div class="name">
+          Description
+        </div>
+        <div class="price">
+          Price
+        </div>
+        <div class="details">
+          Details
+        </div>
+      </div>
+
+      <% presenter.addons.each do |service| %>
+        <%= render("models/service", service: service) %>
+      <% end %>
+    </div>
+  </div>
+</div>

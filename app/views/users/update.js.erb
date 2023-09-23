@@ -1,0 +1,14 @@
+<% if current_user.country_name.present? && current_user.role.present? %>
+  $("[data-is-known-user]").data("isKnownUser", "true");
+
+  $('#current-user-settings').html("<%= escape_javascript render 'shared/current_user_settings' %>")
+
+  // ifthere's a query in the box, then re-sumbit the form
+  if ($("#search-field").val() !== "") {
+    $("#sumbit-search-btn").click();
+  }
+  if ($("#searchsku-field").val() !== "") {
+    $("#sumbit-searchsku-btn").click();
+  }
+
+<% end %>

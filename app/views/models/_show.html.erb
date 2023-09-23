@@ -1,0 +1,36 @@
+<div class="row d-flex flex-column w-100 resource active">
+  <div class="d-flex w-100 instrument header-area">
+    <div class="d-flex w-100">
+      <%= image_tag image_uri(@instrument.model_id), class: "instrument-image img-thumbnail" rescue image_tag fallback_image_uri(@instrument.model_id), class: "instrument-image img-thumbnail" rescue image_tag "instrument_icon_gray.svg", class: "instrument-image img-thumbnail" %>
+      <h2 class="instrument-name">
+        <%= presenter.description %>
+      </h2>
+    </div>
+
+    <div class="clear-search-area">
+      <div class="times-icon">
+        <%= show_svg('icons/times.svg') %>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-100 instrument">
+    <% if presenter.packages? %>
+      <section class="d-flex flex-column w-100 packages">
+        <%= render(partial: "models/packages") %>
+      </section>
+    <% end %>
+
+    <section class="d-flex flex-column w-100 standalone-services">
+      <%= render(partial: "models/service_standalone_addons") %>
+    </section>
+
+    <section class="d-flex flex-column w-100 additional-services">
+      <%= render(partial: "models/training_qualifications") %>
+    </section>
+
+    <section class="d-flex flex-column w-100 services literature">
+      <%= render(partial: "models/literatures") %>
+    </section>
+  </div>
+</div>

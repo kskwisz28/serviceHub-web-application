@@ -1,0 +1,46 @@
+variables:
+  archiveName: $(Build.SourceBranchName)-$(Build.BuildId).zip
+  vmImageName: 'ubuntu-latest'
+  BuildConfiguration: Release
+  Parameters.RestoreBuildProjects: MyProjectDir/**/*.csproj
+  Parameters.TestProjects: MyProjectDir/**/*[Tt]ests/*.csproj
+
+  variables:
+    packagePath: 'packages/device-bastion'
+    workingDir: $(System.DefaultWorkingDirectory)/$(packagePath)
+    archivePath: $(Build.ArtifactStagingDirectory)/$(archiveName)
+
+trigger:
+  batch: true
+  branches:
+    include:
+      - master
+      - develop
+
+pool:
+  name: Azure Pipelines
+
+steps:
+- task: UseRubyVersion@0
+  displayName: 'use Ruby v2.6.6'
+  inputs:
+    versionSpec: '=2.6.6'
+
+- script: |
+   gem install bundler 
+   bundle install --retry=3 --jobs=4
+  displayName: 'bundle install'
+
+- script: 'bundle exec rake'
+  displayName: 'bundle exec rake'
+
+- task: ArchiveFiles@1
+  displayName: 'archive files'
+  inputs:
+    rootFolder: .
+    includeRootFolder: false
+    archiveType: zip
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+

@@ -1,0 +1,265 @@
+<div class="lit-library-header text-center">
+  <h2>ServiceHub Lead Incentive Program</h2>
+  <div class="w-100 spacer"></div>
+</div>
+<h3 class="page-header text-center">
+    ​<strong>For NA Instrument Sales</strong>
+</h3>
+<div class="leads-pass">
+  <p class="text-center"><%= image_tag asset_path("slip-instrument-sales.jpg"), alt: "SLIP" %><br/>
+  </p>
+  <div class="instrument-search-area">
+    <div class="search-area">
+      <%= form_with method: :get, id: 'search' do |f| %>
+        <%= f.text_field :search, placeholder: "Search by Serial Number", data: { query: "" } %>
+        <%= f.button "Search", class: "btn btn-danger", data: { submit_btn: "" }, id: "search-button" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row d-flex flex-column w-100 resource" id="leads-pass-query-result">
+    <div class="box text-center" id="bad-result" data-bad-result>
+      <h2 class="bad-result-header" data-bad-result-header></h2>
+      <h3 class="bad-result-subheader" data-bad-result-subheader></h3>
+      <p class="bad-result-disclaimer text-center" data-bad-result-disclaimer></p>
+    </div>
+    <div class="box" data-result>
+      <div class="instrument-summary">
+        <div class="image-wrapper">
+          <img class="instrument-image" alt="instrument" data-image>
+        </div>
+        <div class="instrument-attributes-wrapper">
+          <h2 data-title> </h2>
+          <div class="instrument-attributes">
+            <div class="instrument-info">
+              <div class="attr">
+                <div class="attr-header">Serial Number:&nbsp;</div>
+                <div class="serial-number" data-serial-number></div>
+              </div>
+              <div class="attr status-contract-details">
+                <div class="attr-header">Current Status:&nbsp;</div>
+                <div class="status-icon" data-status-icon>
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="exclamation-triangle"
+                            class="svg-inline--fa fa-exclamation-triangle fa-w-18" role="img"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                    <path fill="currentColor"
+                              d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="expiration" data-expiration></div>
+              </div>
+              <div class="details">
+                <a data-show-details id="show-details">See Details</a>
+                <a data-hide-details id="hide-details">Hide Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="service-contract-history" data-service-contract-history>
+        <h4>Service Contract History</h4>
+        <table>
+          <tr>
+            <th class="contract-name">Contract Name</th>
+            <th class="contract-type">Type</th>
+            <th class="contract-number">Contract #</th>
+            <th class="contract-start-date">Start Date</th>
+            <th class="contract-end-date">End Date</th>
+          </tr>
+          <tbody data-table-body>
+          </tbody>
+        </table>
+      </div>
+      <div class="form-header" data-form-header>
+        <h3>Please use the below form to submit the lead information for this instrument!</h3>
+        <p>
+          The service sales team will promptly respond and you will earn rewards points for yourself.
+        </p>
+
+      </div>
+      <%= form_with url: leads_pass_path, method: "POST", local: true, data: { leads_pass_form: "" } do |f| %>
+        <div class="leads-pass-form-container">
+          <label>
+            Select a lead category
+          </label>
+          <div style="width:100%">
+            <label class="d-flex">
+			              <%= f.check_box(:instrument_service_plans) %>
+              <span style="margin-left:10px;">
+                Instrument Service Plans
+              </span>
+
+            </label>
+            <label class="d-flex">
+              <%= f.check_box(:qualifications) %>
+              <span style="margin-left:10px;">
+                Qualifications
+              </span>
+            </label>
+          </div>
+          <div>
+          </div>
+          <div style="width:100%">
+            <label class="d-flex">
+              <%= f.check_box(:consulting_services) %>
+              <span style="margin-left:10px;">
+                Consulting Services (CSV/AV)
+              </span>
+            </label>
+            <label class="d-flex">
+              <%= f.check_box(:training) %>
+              <span style="margin-left:10px;">
+                Training
+              </span>
+            </label>
+          </div>
+          <%= f.label :first_name, "First name:", id: "left" %>
+          <%= f.text_field :first_name, class: "left" %>
+          <%= f.label :last_name, "Last name:", id: "right" %>
+          <%= f.text_field :last_name, class: "right" %>
+          <%= f.label :company, "Organization:", id: "left" %>
+          <%= f.text_field :company, class: "left" %>
+          <%= f.label :position, "Position:", id: "right" %>
+          <%= f.text_field :position, class: "right" %>
+          <%= f.label :phone, "Phone:", id: "left" %>
+          <%= f.text_field :phone, class: "left" %>
+          <%= f.label :email, "Email:", id: "right" %>
+          <%= f.text_field :email, class: "right" %>
+          <%= f.label :region, "Region:" %>
+          <%= f.select :region, LeadPass::REGIONS, {}, style: "width: 100%" %>
+          <%= f.label :country, "Country:" %>
+          <%= f.select :country, current_user.countries.map{|e| e[:code]}, {}, style: "width: 100%" %>
+          <%= f.label :zip, "Zip/Postcode:" %>
+          <%= f.text_field :zip, class: "left" %>
+          <%= f.label :instrument_nickname, "Instrument nickname:" %>
+          <%= f.text_field :instrument_nickname, placeholder: "(example: Skywalker or Yoda)", class: "right" %>
+          <%= f.label :notes, "Notes:", id: "notes" %>
+          <%= f.text_area :notes %>
+          <div id="current-user-settings">
+            <%= render 'shared/current_sender_settings' %>
+            <%= f.submit "Send", class: "btn btn-danger", data: { lead_submit_btn: "" } %>
+          </div>
+        </div>
+        <%= f.hidden_field :reference_instrument, value: "", data: {reference_instrument: ""} %>
+        <%= f.hidden_field :serial_number, value: "", data: {serial_number: ""} %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="lit-library-header text-center">
+  <h2>Leaderboards</h2>
+  <div class="w-100 spacer"></div>
+</div>
+<h3 class="page-header text-center">
+    ​<strong>North America</strong>
+</h3>
+<div style="border-bottom: 1px solid #999999; ">
+  <div style="width: 15%; float: left;"><strong>Position</strong></div>
+<div style="width: 45%; float: left;"><strong>Name</strong></div>
+<div style="width: 30%; float: left;"><strong>Country</strong></div>
+  <div style="width: 10%; float: left;"><strong>Leads</strong></div>
+</div>
+
+<div style="border-bottom: 1px solid #999999; ">
+  <div style="width: 15%; float: left;">1</div>
+<div style="width: 45%; float: left;">Carrie Scott</div>
+<div style="width: 30%; float: left;">US</div>
+  <div style="width: 10%; float: left;">2</div>
+</div>
+<div style="border-bottom: 1px solid #999999; ">
+  <div style="width: 15%; float: left;">2</div>
+<div style="width: 45%; float: left;">Tracey Lavezzi</div>
+<div style="width: 30%; float: left;">US</div>
+  <div style="width: 10%; float: left;">1</div>
+</div>
+<div style="border-bottom: 1px solid #999999; ">
+  <div style="width: 15%; float: left;">3</div>
+<div style="width: 45%; float: left;"></div>
+<div style="width: 30%; float: left;"></div>
+  <div style="width: 10%; float: left;"></div>
+</div>
+<div style="border-bottom: 1px solid #999999; ">
+  <div style="width: 15%; float: left;">4</div>
+<div style="width: 45%; float: left;"></div>
+<div style="width: 30%; float: left;"></div>
+  <div style="width: 10%; float: left;"></div>
+</div>
+<div style="border-bottom: 1px solid #999999; ">
+  <div style="width: 15%; float: left;">5</div>
+<div style="width: 45%; float: left;"></div>
+<div style="width: 30%; float: left;"></div>
+  <div style="width: 10%; float: left;"></div>
+</div>
+<div style="border-bottom: 1px solid #999999; ">
+  <div style="width: 15%; float: left;">6</div>
+<div style="width: 45%; float: left;"></div>
+<div style="width: 30%; float: left;"></div>
+  <div style="width: 10%; float: left;"></div>
+</div>
+<div style="border-bottom: 1px solid #999999; ">
+  <div style="width: 15%; float: left;">7</div>
+<div style="width: 45%; float: left;"></div>
+<div style="width: 30%; float: left;"></div>
+  <div style="width: 10%; float: left;"></div>
+</div>
+<div style="border-bottom: 1px solid #999999; ">
+  <div style="width: 15%; float: left;">8</div>
+<div style="width: 45%; float: left;"></div>
+<div style="width: 30%; float: left;"></div>
+  <div style="width: 10%; float: left;"></div>
+</div>
+<div style="border-bottom: 1px solid #999999; ">
+  <div style="width: 15%; float: left;">9</div>
+<div style="width: 45%; float: left;"></div>
+<div style="width: 30%; float: left;"></div>
+  <div style="width: 10%; float: left;"></div>
+</div>
+<div style="border-bottom: 1px solid #999999; ">
+  <div style="width: 15%; float: left;">10</div>
+<div style="width: 45%; float: left;"></div>
+<div style="width: 30%; float: left;"></div>
+  <div style="width: 10%; float: left;"></div>
+</div>
+
+
+<div class="lit-library-header text-center">
+  <h2>Rules</h2>
+  <div class="w-100 spacer"></div>
+</div>
+
+<p style="font: bold;">
+<strong>PURPOSE</strong></br>
+The ServiceHub Lead Incentive Program (SLIP) for Instrument Sales is intended to encourage upfront sales representatives to submit customer leads for orphaned instruments no longer under active service contracts or training, qualification or consulting services for non-orphaned instruments.</br></br>
+
+<strong>APPLICABILITY</strong></br>
+All North America upfront instrument sales representatives. Participants are compensated for submitted and qualified SLIP leads. Where applicable, managers of participants may be eligible for rewards. SLIP as a program can be cancelled or modified at the discretion of the Global or Americas Services & Support Leadership Team</br></br>
+
+<strong>SCOPE</strong></br>
+SLIP for Instrument Sales applies to all “orphan” instruments that are no longer under active service contracts. </br></br>
+
+<strong>RESPONSIBILITIES</strong></br>
+<strong>SLIP Administrator</strong> – Track and report out on submitted SLIP leads. Maintain the leaderboard.</br>
+<strong>SLIP Council</strong> – Review any SLIP leads to ensure they don’t fall outside of the guidelines and determine eligibility of those leads.</br>
+<strong>Manager</strong> – First level manager of Participant responsible for approving of final Appreciate points awarded to Participant.</br>
+<strong>Participant (Instrument Sales Representative)</strong> -- While engaging customers, submit any orphan instruments no longer under active service contracts.</br>
+<strong>Service Sales Representative</strong> – Responsible for actively managing and converting SLIP leads.</br></br>
+
+<strong>GUIDELINES</strong></br>
+•	Participants must speak directly to a customer, either in person or by phone, to qualify the lead before entering into ServiceHub. Eligible service offerings include service contracts, fixed-price services and training. Instrument repairs and moves are excluded.</br>
+•	Appreciate point rewards will be distributed to the top 10 submitters on October 1st.</br>
+•	Participants must enter New Leads in ServiceHub themselves.</br>
+•	Any dispute about the validity of a SLIP lead will be presented to and reviewed by the SLIP Council.</br>
+•	If a dispute for a SLIP lead cannot be resolved prior to the end of the contest, payment for the top finalists will be delayed until a final resolution is determined.</br>
+•	Leads will not be accepted if you are prospecting outside of your territory.</br>
+•	If an employee leaves the company, whether voluntarily or involuntarily, the Participant is no longer eligible for the contest.</br></br>
+
+<strong>PAYOUT</strong></br>
+Participants can submit an unlimited number of verified SLIP leads.</br>
+Top 10 finalists will be awarded Appreciate points as determined below:</br></br>
+<strong>#1 Exceed</strong> – 10,000 points</br>
+<strong>#2 Succeed</strong> – 5,000 points</br>
+<strong>#3 Achieve</strong> – 2,400 points</br>
+<strong>#4-10 Evolve</strong> – 1,200 points</br>
+
+</p></br></br><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=LXJ9toqqd0ehaevremo7Z4OsiNcTHhFFl2AIddnjuBdUQTBUVUhOVzlGTEtIRDU1WDVJSTdTNzFQNS4u" target="_blank">Submit feedback here</a>

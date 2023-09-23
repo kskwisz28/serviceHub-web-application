@@ -1,0 +1,5 @@
+<% if form_object.errors.key?(key) %>
+  <div class="error">
+    <%= form_object.errors.messages.fetch(key).first.upcase_first %>
+  </div>
+<% end %>

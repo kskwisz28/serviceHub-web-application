@@ -1,0 +1,321 @@
+.upper-banner {
+  min-height: 65px;
+  margin-right: -10px;
+  margin-left: -10px;
+}
+
+.banner {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: $deep-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 156px;
+  min-height: 156px;
+  max-height: 156px;
+  position: relative;
+  color: #FFFFFF;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  .main-banner {
+    height: 100%;
+    z-index: 1;
+    padding-left: 0;
+  }
+
+  .banner-content {
+    z-index: 2;
+    padding: 0 10px;
+  }
+
+  .banner-text {
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+  }
+
+  .subtitle {
+    font-family: "HelveticaNeueThin";
+    font-weight: normal;
+    letter-spacing: 0;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .nav-item,
+  .nav-item a {
+    border-radius: 13px 13px 0px 0px;
+    font-family: "HelveticaNeue";
+  }
+
+  .tab-container  {
+    padding: 0;
+    margin-top: -36px;
+
+    .nav {
+      margin-bottom: 0;
+    }
+
+    ul li {
+      background-color: #F3F3F3;
+      margin-right: 3px;
+      border-radius: 10px 10px 0 0;
+      text-align: center;
+      position: relative;
+      z-index: 3;
+
+
+      &.active {
+        background-color: #FFF;
+        border-bottom-color: #FFF;
+        z-index: 4;
+        background-repeat: no-repeat;
+
+        a {
+          color: $default-color;
+        }
+
+        &::before {
+          background: asset_url('curve-active-left.png');
+        }
+        &::after {
+          background: asset_url('curve-active-right.png');
+        }
+      }
+
+      $r-l-offset: -19.5px;
+      $bottom-offset: -4.5px;
+
+      $scale: scale(.4);
+      &::before {
+        background: asset_url('curve-inactive-left.png');
+        position: absolute;
+        width: 28px;
+        height: 29px;
+        content: " ";
+        left: $r-l-offset;
+        bottom: $bottom-offset;
+        transform: $scale;
+      }
+
+      &::after {
+        background: asset_url('curve-inactive-right.png');
+        position: absolute;
+        width: 29px;
+        height: 28px;
+        content: " ";
+        right: $r-l-offset;
+        bottom: $bottom-offset;
+        transform: $scale;
+      }
+
+      .nav-link {
+        font-size: 14px;
+        line-height: 16px;
+        color: $med-gray;
+        width: 100%;
+        height: 100%;
+        height: 40px;
+        max-height: 40px;
+        padding: 10px 10px;
+
+        &:hover, &.nav-link:focus {
+          outline: none;
+          border: none;
+        }
+      }
+
+
+      &.envelope-container {
+        width: auto;
+        padding: 0 !important;;
+        position: relative;
+        text-align: center;
+        float: right !important;
+
+        .closed-envelope svg {
+          fill: $med-gray;
+          width: 24px;
+          height: 14px;
+        }
+
+        .open-envelope svg {
+          fill: $tf-red;
+          width: 22.74px;
+          height: 23.24px;
+        }
+
+        .item-count {
+          border-radius: 50%;
+          background-color: red;
+          text-align: center;
+          color: white;
+          position: absolute;
+          left: 17px;
+          top: 14px;
+          width: 9px;
+          height: 9px;
+          font-size: 10px;
+          line-height: 9px;
+        }
+      }
+    }
+  }
+}
+
+.background-banner {
+  width: 1375px;
+  height: 156px;
+  min-height: 156px;
+  max-height: 156px;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: auto;
+  z-index: 0;
+  background-image: asset_url('background.png');
+  background-repeat: no-repeat;
+  background-position: bottom 0px right 75px;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  right: -60%;
+}
+
+
+
+@media all and (min-width: 600px) {
+
+  .banner .tab-container .package-info,
+  .banner .tab-container .literature,
+  .banner .tab-container .leads-pass {
+    width: auto;
+    font-size: 18px;
+  }
+}
+
+
+@media only screen and (min-width: 768px) {
+
+  .background-banner {
+    height: 245px;
+    min-height: 245px;
+    max-height: 245px;
+    right: -14%;
+  }
+
+  /* Banner */
+  .banner {
+    height: 245px;
+    min-height: 245px;
+    max-height: 245px;
+
+    .main-banner {
+      padding-left: 10px;
+    }
+
+    .banner-text {
+      padding-top: 50px;
+    }
+
+
+    .subtitle {
+      font-family: "HelveticaNeueThin";
+      font-weight: normal;
+      letter-spacing: 0;
+      font-size: 25px;
+      line-height: 27px;
+    }
+
+    .banner-content {
+      padding: initial;
+    }
+
+    .tab-container  {
+      margin-top: -60px;
+
+      ul li {
+        padding: 9px;
+
+        &::before {
+          left: -28px;
+          bottom: -1px;
+          transform: scale(1);
+        }
+
+        &::after {
+          right: -28px;
+          bottom: -1px;
+          transform: scale(1);
+        }
+
+        .nav-link {
+          font-size: 22px;
+          line-height: 22px;
+          max-height: 100%;
+          height: 100%;
+          // height: 60px;
+        }
+
+        &.envelope-container {
+          width: 120px;
+
+          .closed-envelope  {
+            margin-top: 18px;
+
+            svg {
+              fill: $med-gray;
+              width: 40px;
+              height: 25px;
+            }
+
+          }
+
+          .open-envelope svg {
+            fill: $tf-red;
+            width: 39.42px;
+            height: 40.28px;
+          }
+
+          .item-count {
+            left: 52px;
+            top: 17px;
+            width: 16px;
+            height: 16px;
+            font-size: 12px;
+            line-height: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 1100px) {
+  .background-banner {
+    right: 3%;
+  }
+
+}
+
+
+
+@media all and (min-width: 1400px) {
+
+  .banner .tab-container .package-info,
+  .banner .tab-container .literature,
+  .banner .tab-container .leads-pass {
+    width: 240px;
+    font-size: 22px;
+  }
+}
+
+
+@media screen and (min-width: 1440px) {
+  .background-banner {
+    right: initial;
+  }
+}

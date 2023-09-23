@@ -1,0 +1,67 @@
+<% if @instrument.present? %>
+
+  <% if decorated_instrument(@instrument).countries.include?(current_user.country_code) %>
+
+    <div class="d-flex w-100 instrument header-area">
+      <div class="d-flex w-100">
+
+        <%= image_tag image_uri(@instrument.model), class: "instrument-image img-thumbnail" rescue image_tag fallback_image_uri(@instrument.model), class: "instrument-image img-thumbnail" rescue image_tag "instrument_icon_gray.svg", class: "instrument-image img-thumbnail" %>
+
+        <h2 class="instrument-name"><%= decorated_instrument(@instrument).name %>
+		<% if current_user.role == "service_sales" %><%= decorated_instrument(@instrument).status %><% end %></h2>
+      </div>
+
+      <div class="clear-search-area">
+        <div class="times-icon">
+          <%= show_svg('icons/times.svg') %>
+        </div>
+      </div>
+    </div>
+
+    <% if @show_full_instrument %>
+      <div class="w-100 instrument">
+        <% if current_user.role == "instrument_sales" %>
+          <%= render 'packages_section', locals: { services: decorated_instrument(@instrument).packages, name: "Featured Packages" } %>
+        <% end %>
+
+        <div class="d-flex flex-column w-100 standalone-services">
+          <h2 class="text-center">Service Plans</h2>
+          <div class="w-100 spacer"></div>
+
+          <%= render 'standalone_services_section', locals: { services: decorated_instrument(@instrument).standalone_services, name: "Service Plans" } %>
+          <%= render 'standalone_services_section', locals: { services: decorated_instrument(@instrument).add_on_services, name: "Add-Ons" } %>
+
+        </div>
+
+        <div class="additional-services d-flex flex-column w-100">
+
+          <h2 class="text-center mt-2">Additional Services</h2>
+            <div class="w-100 spacer"></div>
+
+          <%= render 'qualification_services_section', locals: { services: decorated_instrument(@instrument).qualification_services, name: "Qualification Services" } %>
+
+          <%= render 'educational_services_section', locals: { services: decorated_instrument(@instrument).education_services, name: "Education Services"} %>
+
+          <% if current_user.role == "service_sales" %>
+            <%# Qualification Services, Professional Services, Maintenance Services use same partial. They're derived from same collection in Mongo. %>
+            <%= render 'qualification_services_section', locals: { services: decorated_instrument(@instrument).professional_services, name: "Professional Services" } %>
+            <%= render 'qualification_services_section', locals: { services: decorated_instrument(@instrument).maintenance_services, name: "Planned Maintenance" } %>
+          <% end %>
+        </div>
+
+        <div class="literature d-flex flex-column">
+          <h2 class="text-center">Literature</h2>
+          <div class="w-100 spacer"></div>
+
+          <h4>Literature</h4>
+          <div class="d-flex flex-column resource literature">
+            <%= render 'literature/literature_section', locals: { literature: @literature } %>
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+  <% else %>
+    <h2>Sorry, we do not have this information for <%= current_user.country_name %>.</h2>
+  <% end %>
+<% end %>

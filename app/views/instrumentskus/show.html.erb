@@ -1,0 +1,7 @@
+<%= render 'shared/search', locals: { search_prompt: "Search by Instrument Model", model: Model,  url: instruments_path, instruments: @instruments } %>
+
+<div class="row d-flex flex-column w-100 resource" id="query-result">
+  <% if presenter %>
+    <%= render("models/show") %>
+  <% end %>
+</div>

@@ -1,0 +1,65 @@
+<div class="row d-flex flex-column w-100 resource active" id="admin-dashboard">
+  <div class="d-flex w-100 header-area">
+    <div class="d-flex w-100">
+      <h1 class="admin-header">
+        Admin ➝ Alert Bar
+      </h1>
+    </div>
+    <div class="admin-times-icon">
+      <%= link_to(show_svg("icons/times-larger.svg"), root_path) %>
+    </div>
+  </div>
+  <% if alert_bar&.persisted? %>
+    <div class="d-flex flex-column resource">
+      <div id="instrument-services">
+        <div class="d-flex flex-column resource">
+          <div class="alert-bar-data-section" >
+            <div class="row w-100 service-hub-row service-hub-header-row">
+              <div class="alert-description">
+                Description
+              </div>
+              <div class="button-text">
+                Button Text
+              </div>
+              <div class="button-url">
+                Button URL
+              </div>
+              <div class="admin-options">
+                Admin
+              </div>
+            </div>
+            <div class="row w-100 service-hub-row">
+              <div class="alert-description">
+                <%= alert_bar.description %>
+              </div>
+              <div class="button-text">
+                <%= alert_bar.button_text %>
+              </div>
+              <div class="button-url">
+                <%= alert_bar.url %>
+              </div>
+              <div class="admin-options">
+                <%= link_to("delete", admins_alert_bar_path, method: :delete) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <%= form_with(model: alert_bar || AlertBar.new, url: admins_alert_bar_path, id: "new-alert") do |f| %>
+      <div class="alert-bar-form-container">
+        <%= f.label(:description, id: "label") %>
+        <%= f.text_field(:description, placeholder: "Enter alert description", id: "field") %>
+        <%= render("field_error", form_object: f.object, key: :description) %>
+        <%= f.label(:button_text, id: "label") %>
+        <%= f.text_field(:button_text, placeholder: "Enter button text", id: "field") %>
+        <%= render("field_error", form_object: f.object, key: :button_text) %>
+        <%= f.label(:button_url, id: "label") %>
+        <%= f.text_field(:url, placeholder: "Enter button URL", id: "field") %>
+        <%= render("field_error", form_object: f.object, key: :url) %>
+        <%= f.submit("Save Alert", class: "btn btn-danger", id: "save-alert-btn") %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

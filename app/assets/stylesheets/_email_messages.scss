@@ -1,0 +1,155 @@
+.send-documents-header {
+  margin-top: 66px;
+  text-align: center;
+}
+
+.email-message {
+
+  .attachments {
+    border-bottom: 1px solid $light-gray;
+
+    .item {
+      flex: 0 0 10%;
+    }
+
+    .description {
+      flex: 0 0 40%;
+      padding-right: 2rem;
+      word-break: break-all;
+    }
+
+    .preview {
+      flex: 0 0 40%;
+
+      img {
+        width: 100%;
+        max-width: 180px;
+        height: auto;
+        box-shadow: 0px 3px 6px #00000029;
+        border: 1px solid $light-gray;
+      }
+    }
+
+    .action {
+      flex: 0 0 5%;
+      margin-left: 10px;
+
+      svg {
+        fill: $tf-red;
+        height: 20px;
+        width: 20px;
+      }
+    }
+
+    .selected-literature-list {
+      margin: 0;
+
+      .selected-literature {
+        display: flex;
+        font-size: 13px;
+        margin-bottom: 29px;
+      }
+
+    }
+
+
+  }
+
+  .email-body {
+    form {
+      .form-group {
+        width: 100%;
+      }
+
+      label {
+        width: 165px;
+        text-align: right;
+      }
+
+      input:not([type="submit"]) {
+        width: 100%;
+      }
+
+      .submission-area {
+        flex-direction: column;
+
+        .current-settings {
+          display: flex;
+          flex-direction: column;
+
+          .change-settings {
+            margin: 1rem 0 1rem 0;
+          }
+        }
+      }
+    }
+  }
+  .email-thank-you > h1 {
+    margin: 148px;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+
+
+  .email-message {
+    .selected-literature-list {
+      margin-left: 12px;
+    }
+
+    .attachments {
+
+      .item {
+        flex: 0 0 15%;
+        padding-left: .5rem;
+      }
+
+      .description {
+        flex: 0 0 60%;
+      }
+
+      .preview {
+        flex: 0 0 20%;
+      }
+
+      .action {
+        margin-left: 0;
+        margin-top: -5px;
+      }
+
+    }
+
+    .email-body {
+      form {
+        .form-group {
+          width: 60%;
+        }
+
+        .submission-area {
+          flex-direction: row;
+
+          .current-settings {
+            flex-direction: row;
+            align-items: flex-end;
+
+            .change-settings {
+              margin: 0 0 0 1rem;
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .email-message {
+    .email-thank-you > h1{
+      margin: 0px;
+      margin-bottom: 148px;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+<div class="lit-library-header text-center">
+  <h2>Instrument Specific Literature</h2>
+  <div class="w-100 spacer"></div>
+</div>
+
+<%= render 'shared/search', locals: { search_prompt: "", model: Literature, url: literature_path, instruments: @instruments } %>
+
+<div class="row d-flex flex-column w-100 resource" id="query-result">
+  <%= render "literature" %>
+</div>
+
+<div class="lit-library-header text-center">
+  <h2>General Literature Library</h2>
+  <div class="w-100 spacer"></div>
+</div>
+
+<div class="d-flex flex-column resource literature literature-library active">
+
+  <div id="instrument-services">
+    <%= render 'literature_section', locals: { link_name: "Instrument Services", literature: presenter.instrument } %>
+  </div>
+
+  <div id="qualification-services">
+    <%= render 'literature_section', locals: { link_name: "Qualification Services", literature: presenter.qualification } %>
+  </div>
+
+  <div id="consulting-services">
+    <%= render 'literature_section', locals: { link_name: "Consulting Services", literature: presenter.consulting } %>
+  </div>
+
+  <div id="education-services">
+    <%= render 'literature_section', locals: { link_name: "Education Services", literature: presenter.education } %>
+  </div>
+  
+  <div id="system-restart">
+    <%= render 'literature_section', locals: { link_name: "System Restart", literature: presenter.restart } %>
+  </div>
+  
+</div>

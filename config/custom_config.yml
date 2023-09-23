@@ -1,0 +1,27 @@
+default: &default
+  access_token: 'fake-access-token'
+  email: 'sales.person@thermofisher.com'
+  logout_link: '/'
+  ms_graph_send_email_endpoint: 'http://localhost:3000/dev/ms_graph_send_mail'
+  refresh_token_endpoint: 'http://www.example.com'
+  asset_host: "http://localhost:3000/"
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+staging:
+  <<: *default
+  ms_graph_send_email_endpoint: 'https://graph.microsoft.com/v1.0/me/sendMail'
+  refresh_token_endpoint: 'https://servicehub.gss.tf/.auth/refresh'
+  asset_host: 'https://gsss-servicehub-staging.azurewebsites.net'
+
+production:
+  logout_link: '/.auth/logout?post_logout_redirect_uri=https%3A%2F%2Fthermofisher.com'
+  ms_graph_send_email_endpoint: 'https://graph.microsoft.com/v1.0/me/sendMail'
+  refresh_token_endpoint: 'https://servicehub.gss.tf/.auth/refresh'
+  asset_host: "https://servicehub.gss.tf/"
+
+

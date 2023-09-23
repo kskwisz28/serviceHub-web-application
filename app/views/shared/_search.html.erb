@@ -1,0 +1,34 @@
+<h3 class="page-header"><%= locals[:search_prompt] %></h3>
+<div class="instrument-search-area">
+  <% debugger %>
+  <div class="search-area">
+    <%= form_with model: locals[:model], url: locals[:url], method: :get, id: 'search' do |f| %>
+      <%= f.text_field :search, placeholder: 'Search by Model Number or Model Name', id: 'search-field', value: @instrument.present? ? "#{@instrument.model_id} - #{@instrument.name}" : "" %>
+      <%= f.button "", class: "btn submit-btn", id: "sumbit-search-btn" do %>
+        <span id="search-icon">
+          <%= show_svg('icons/magnifying_glass.svg') %>
+        </span>
+      <% end %>
+      <div id="clear-search-icon">
+        <%= show_svg('icons/times.svg') %>
+      </div>
+    <% end %>
+
+    <%= form_with model: locals[:model], url: locals[:url], method: :get, id: 'searchsku' do |f| %>
+      <%= f.text_field :searchsku, placeholder: 'Search by Instrument SKU/Catalogue Number', id: 'searchsku-field', value: @instrument.present? ? "#{@instrument.model_id} - #{@instrument.sku}" : "" %>
+      <%= f.button "", class: "btn submit-btn", id: "sumbit-searchsku-btn" do %>
+        <span id="search-icon">
+          <%= show_svg('icons/magnifying_glass.svg') %>
+        </span>
+      <% end %>
+      <div id="clear-search-icon">
+        <%= show_svg('icons/times.svg') %>
+      </div>
+    <% end %>
+	
+    <div id="current-user-settings">
+      <%= render 'shared/current_user_settings' %>
+    </div>
+  </div>
+
+</div>

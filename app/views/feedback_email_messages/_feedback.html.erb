@@ -1,0 +1,36 @@
+<div class="modal" id="feedbackFormModal">
+  <div class="feedback-modal-content text-center">
+    <div class="feedback-modal-header">
+      <div class="tf-logo w-100">
+        <%= image_tag asset_path('logo-color.png'), width: "182", alt: "logo" %>
+      </div>
+      <button type="button" class="close">
+        <%= link_to(image_tag(asset_path('icons/times.svg', alt: "times icon", class: "times-icon")), "/") %>
+      </button>
+    </div>
+    <div class="feedback-modal-body">
+      <h3>Contact Us</h3>
+      <p>Thank you for reaching out.</p>
+      <%= form_with model: @feedback, url: feedback_email_message_url, method: :post, id: 'feedback-form' do |f| %>
+        <div class="subject form-group d-flex">
+          <%= f.label :subject, "Subject:"%>
+          <%= f.select("subject", @selections, id: "subject-select") %>
+          <div id="subject-error">Please select a subject from the list.</div>
+        </div>
+        <div class="subject form-group d-flex">
+          <%= f.label :feedback_or_question, "Feedback or question:" %>
+          <%= f.text_area :email_body, rows: 5 %>
+        </div>
+        <% if @current_instrument_model %>
+          <div class="d-flex referral-instrument">
+            <%= f.label :referral_instrument, "Referral instrument:" %>
+            <%= f.text_field :referral_instrument, {value: @current_instrument_model} %>
+          </div>
+        <% end %>
+        <div class="d-flex flex-row mt-3 w-100 save-area">
+          <%= f.submit "Send", class: "btn btn-danger" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<% if site_alert? %>
+  <div class="alert-bar header">
+    <p class="alert-content">
+      <%= site_alert.description %>
+      <% if site_alert.url %>
+        <%= sanitize(link_to(site_alert.button_text || site_alert.url, site_alert.url,  class: 'alert-button' )) %>
+      <% end %>
+    </p>
+  </div>
+<% end %>

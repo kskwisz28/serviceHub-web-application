@@ -1,0 +1,16 @@
+<% if locals[:envelope_closed]  %>
+  <div class="align-items-center link-status attachable">
+    <div class="attach-info">Attach to email</div>
+    <div class="d-flex align-items-center envelope closed">
+      <%= show_svg('icons/envelope-closed.svg') %>
+    </div>
+  </div>
+<% else %>
+  <div class="align-items-center link-status attached">
+    <div class="attach-info">Attached</div>
+    <div class="d-flex align-items-center envelope open">
+      <%= show_svg('icons/envelope-open.svg') %>
+      <span class='status'>✓</span>
+    </div>
+  </div>
+<% end %>

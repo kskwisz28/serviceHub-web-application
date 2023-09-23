@@ -1,0 +1,18 @@
+var link = $("#literature-link-" + "<%= @literature_asset_url %>".replaceAll(/[^a-zA-Z0-9]/g, ""));
+
+if ($("#send-docs").length) {
+  // I don't like nesting a Ruby conditional inside of a JS conditional but here we are.
+  <% if current_email_message.errors.messages[:customer_email].present? %>
+    $("#customer-email-error").html("<%= escape_javascript current_email_message.errors.messages[:customer_email].first %>")
+  <% else %>
+    $("#lit-row-" + "<%= @literature_asset_url %>".replaceAll(/[^a-zA-Z0-9]/g, "")).hide();
+  <% end %>
+
+} else {
+  // update row
+  link.html("<%= escape_javascript render 'shared/envelopes_for_row', locals: { envelope_closed: !current_email_message.literature_asset_urls.include?(@literature_asset_url) } %>")
+}
+
+// update banner tab
+$('.envelope-container').html("<%= escape_javascript render 'shared/envelopes', locals: { envelope_closed:  current_email_message.literature_asset_urls.any? } %>")
+

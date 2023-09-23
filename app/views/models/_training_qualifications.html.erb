@@ -1,0 +1,69 @@
+<h2 class="text-center">
+  Additional Services
+</h2>
+
+<div class="w-100 spacer">
+</div>
+
+<div class="services-area">
+  <h4 class="mt-2">
+    Qualification Services
+  </h4>
+
+  <div class="d-flex flex-column mb-4 resource services">
+    <div class="service-hub-data-section">
+      <%= render("models/training_qualification_header") %>
+
+      <% presenter.qualification_qualifications.each do |service| %>
+        <%= render("models/qualification", service: service) %>
+      <% end %>
+    </div>
+  </div>
+
+  <h4 class="mt-2">
+    Education Services
+  </h4>
+
+  <div class="d-flex flex-column mb-4 resource services-data">
+    <div class="service-hub-data-section">
+      <%= render("models/training_qualification_header") %>
+
+      <% presenter.trainings.each do |service| %>
+        <%= render("models/training", service: service) %>
+      <% end %>
+    </div>
+  </div>
+
+  <% if presenter.qualification_professionals? %>
+    <h4 class="mt-2">
+      Professional Services
+    </h4>
+
+    <div class="d-flex flex-column mb-4 resource services-data">
+      <div class="service-hub-data-section">
+        <%= render("models/training_qualification_header") %>
+
+        <% presenter.qualification_professionals.each do |service| %>
+          <%= render("models/qualification", service: service) %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+
+  <% if presenter.qualification_maintenances? %>
+    <h4 class="mt-2">
+      Planned Maintenance
+    </h4>
+
+    <div class="d-flex flex-column mb-4 resource services-data">
+      <div class="service-hub-data-section">
+        <%= render("models/training_qualification_header") %>
+
+        <% presenter.qualification_maintenances.each do |service| %>
+          <%= render("models/qualification", service: service) %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,182 @@
+.instrument-search-area {
+  .search-prompt {
+    margin-top: 34px;
+    margin-bottom: 15px;
+  }
+
+  .instrument-search-area .container {
+    width: 100%;
+    padding: 0;
+  }
+
+  .instrument-search-area {
+    padding: 0 10px;
+  }
+
+  .search-area {
+    background: $med-light-gray 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .search-area form {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    background-color: white;
+  }
+
+  input {
+    outline: 0;
+    width: 100%;
+  }
+
+  /* styling input rather than adding a selector for this element in order to
+  override behavior from base.css */
+  .search-area input[type=text],.searchsku-area input[type=text]  {
+    padding: 0 18px;
+    width: 100%;
+    height: 50px;
+    max-width: initial;
+    font-size: 12px;
+    margin: 0;
+    border: 1px solid #DCDCDC;
+
+    &:focus {
+      outline: none;
+      border-color: #DCDCDC;
+    }
+  }
+
+  .search-area .submit-btn, #clear-search-icon {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    border: none;
+    background-color: white;
+    padding: 0;
+
+    &:hover{
+      background-color: white;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  #search-icon {
+
+    svg {
+      height: 18px;
+      width: 18px;
+
+      fill: $med-gray;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  #clear-search-icon  {
+    display: none;
+    right: 5px;
+
+    svg {
+      height: 30px;
+      width: 30px;
+
+      fill: $med-gray;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+
+  .current-settings {
+    font-size: 12px;
+    margin-top: 20px;
+
+    a, a:visited {
+      color: $light-blue;
+      font-family: "HelveticaNeueBold";
+    }
+  }
+
+  .easy-autocomplete.eac-square {
+    width: 100%;
+  }
+
+  .easy-autocomplete-container ul {
+    top: -10px;
+    left: 0px;
+    margin: 0;
+    max-height: 180px;
+    overflow-y: scroll;
+    border-bottom: 1px solid #DCDCDC;
+    
+    li {
+      font-size: 12px;
+    }
+  }
+
+  #change-settings-prompt {
+    margin-left: 5px;
+  }
+
+
+}
+// Responsive //
+
+@media only screen and (min-width: 768px) {
+
+  .instrument-search-area {
+
+    .instrument-search-area {
+      padding: initial;
+    }
+
+    .search-header {
+      margin: 0;
+    }
+
+    .search-area  {
+      padding: 27px 49px 27px 49px;
+    }
+
+    .search-area form {
+      flex-wrap: nowrap;
+      margin: 0;
+      padding: 0;
+    }
+
+    .search-area input[type=text] {
+      font-size: 16px;
+      line-height: 50px; // Seems like an insane setting but it avoids descenders being cut off
+    }
+
+    .search-area .submit-btn {
+      right: 20px;
+    }
+
+    #clear-search-icon  {
+      right: 10px;
+    }
+
+    .current-settings {
+      font-size: 14px;
+    }
+
+    .easy-autocomplete-container ul {
+      li {
+        font-size: 16px;
+      }
+    }
+  }
+
+
+}

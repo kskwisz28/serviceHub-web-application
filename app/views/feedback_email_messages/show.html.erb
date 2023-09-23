@@ -1,0 +1,20 @@
+<div class="modal" id="feedbackFormModal">
+  <div class="feedback-modal-content text-center">
+    <div class="feedback-modal-header">
+      <div class="tf-logo w-100">
+        <%= image_tag asset_path('logo-color.png'), width: "182", alt: "logo" %>
+      </div>
+      <button type="button" class="close">
+        <%= link_to(image_tag(asset_path('icons/times.svg', alt: "times icon", class: "times-icon")), "/") %>
+      </button>
+    </div>
+    <div class="feedback-modal-body">
+      <div class="d-flex w-100 thank-you-message-container">
+        <div class="feedback-thank-you-message">
+          <h1>Thank you for your feedback. We'll get back to you shortly.</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

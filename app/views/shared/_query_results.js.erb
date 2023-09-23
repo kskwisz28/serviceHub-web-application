@@ -1,0 +1,18 @@
+  // Must load this js after instrument partial is rendered
+
+  $("#sumbit-search-btn").hide();
+  $("#sumbit-searchsku-btn").hide();
+  $("#clear-search-icon").show();
+
+  var reset = function() {
+    $("#sumbit-search-btn").show();
+	$("#sumbit-searchsku-btn").show();
+    $("#clear-search-icon").hide();
+
+    $("#search-field").val("");
+    $("#query-result").empty();
+    $("#query-result").removeClass("active");
+  }
+
+  $("#clear-search-icon").on("click", reset);
+  $(".header-area .clear-search-area").on("click", reset);

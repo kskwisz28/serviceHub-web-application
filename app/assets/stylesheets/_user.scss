@@ -1,0 +1,243 @@
+
+#userPrefsModal {
+  .modal-header {
+    border-bottom: none;
+  }
+
+  $close-icon-right-padding: 20px;
+  .tf-logo {
+    padding-top: 20px;
+    margin-right: -$close-icon-right-padding;
+  }
+
+  .close {
+    padding-right: $close-icon-right-padding;
+    padding-top: 10px;
+  }
+
+  $modal-width: 360px;
+
+  &.modal {
+    position: fixed;
+    height: auto;
+    width: $modal-width;
+    top: 50px;
+    left: 50%;
+    margin-left: -($modal-width/2);
+    font-size: 14px;
+    border-radius: 40px;
+
+    .modal-content {
+      border-bottom: none;
+
+      .modal-body {
+        padding: 15px 15px 10px;
+
+        h3 {
+          margin-top: 0px;
+          margin-bottom: 0px;
+          font-family: "HelveticaNeueMedium";
+        }
+
+        .role-selection-prompt, label {
+          font-family: "HelveticaNeueMedium";
+        }
+
+        form {
+          margin-top: 30px;
+
+          .roles {
+            flex-direction: column;
+            margin-top: .5rem;
+
+            .form-group {
+              margin-bottom: 0;
+              margin-left: 40px;
+
+              label {
+                margin-left: 10px;
+                font-family: "HelveticaNeue";
+              }
+            }
+          }
+
+          .country.form-group {
+            margin-top: .5rem;
+            flex-direction: column;
+
+            #country-error {
+              display: none;
+              color: red;
+            }
+
+            #country-select {
+              height: 40px;
+              width: 300px;
+              padding: 0px 15px;
+              border: 1px solid #A1A1A1;
+            }
+
+            .easy-autocomplete-container ul {
+              top: -10px;
+              left: 0px;
+              margin: 0;
+              max-height: 142px;
+              overflow-y: scroll;
+              border-bottom: 1px solid $med-light-gray;
+
+              li {
+                border-bottom: 1px solid $med-light-gray;
+              }
+
+            }
+
+            select {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+
+        .email-label {
+          margin-right: 10px;
+          width: 100%;
+        }
+
+        .email-info {
+          flex-direction: column;
+          align-items: center;
+
+          .email-area {
+            flex-direction:column;
+            align-items: flex-start;
+
+            .email-address {
+              text-align: left;
+            }
+          }
+
+          .logout-link {
+            margin-left: 0;
+          }
+        }
+
+      }
+
+      .save-area {
+        border: none;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        .selection-prompt {
+          margin-right: 0;
+          margin-bottom: 1rem;
+        }
+
+        .btn {
+          width: 103px;
+          height: 50px;
+
+          &:disabled, &[disabled] {
+            background-color: $med-gray !important;;
+            color: white !important;
+            border: none;
+          }
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-backdrop {
+  width: 100%;
+  &.show {
+    background-color: #222222;
+    opacity: 70%;
+  }
+}
+
+
+@media only screen and (min-width: 768px) {
+
+  #userPrefsModal {
+    $modal-width: 588px;
+
+    &.modal {
+      position: fixed;
+      height: auto;
+      width: $modal-width;
+      top: 150px;
+      left: 50%;
+      margin-left: -($modal-width/2);
+      font-size: 14px;
+      border-radius: 40px;
+
+      .modal-content {
+        .modal-body {
+          padding: 15px 40px 10px;
+
+          form {
+            .roles {
+              flex-direction: row;
+
+              .form-group {
+                margin-bottom: 1rem;
+                margin-left: 0;
+
+                &:last-of-type {
+                  margin-left: 24px;
+                }
+              }
+            }
+
+            .country.form-group {
+              flex-direction: row;
+
+              label {
+                margin-right: 10px;
+              }
+              #country-select {
+                width: 350px;
+              }
+
+            }
+          }
+
+          .email-label {
+            // margin-left: 48px;
+            width: auto;
+          }
+          .email-info {
+            flex-direction: row;
+            align-items: flex-start;
+
+            .email-area {
+              flex-direction: row;
+            }
+
+            .logout-link {
+              margin-left: 15px;
+            }
+          }
+        }
+
+        .save-area {
+          padding-right: 30px;
+          align-items: flex-end;
+          justify-content: flex-end;
+
+          .selection-prompt {
+            margin-right: 47px;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+}

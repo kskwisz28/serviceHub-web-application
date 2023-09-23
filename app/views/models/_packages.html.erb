@@ -1,0 +1,105 @@
+<h2 class="text-center mt-2">
+  Packages
+</h2>
+
+<div class="w-100 spacer">
+</div>
+
+<div class="packages-area">
+  <h4 class="mt-2">
+    Featured Packages
+  </h4>
+  <div class="d-flex flex-column mb-4 resource packages-data">
+    <div class="service-hub-data-section">
+      <div class="row w-100 service-hub-row service-hub-header-row">
+        <div class="sku">
+          SKU
+        </div>
+        <div class="name">
+          Description
+        </div>
+        <div class="price">
+          Price
+        </div>
+        <div class="details">
+          Details
+        </div>
+      </div>
+      <% presenter.packages.each do |package| %>
+        <div class="row w-100 service-hub-row" data-controller="details">
+          <div class="d-flex flex-nowrap w-100 primary-info">
+            <div class="sku">
+              <%= package.sku %>
+            </div>
+            <div class="name">
+              <%= package.description %>
+            </div>
+            <div class="price">
+              <% package.filtered_prices.each do |price| %>
+                <div>
+                  <%= format_price(price, package.filtered_prices) %>
+                </div>
+              <% end %>
+            </div>
+            <%= link_to "Show Details", '', class: 'show-details' %>
+          </div>
+
+          <div class="details-area w-100 mt-3" data-details-target="toggle">
+            <% package.children.each.with_index do |child, index| %>
+              <div class="d-flex mt-4 mb-3">
+                <div class="d-flex item-area">
+                  <div class="d-flex flex-column service-contents-item-sku">
+                    <div class="header detail-header mt-4 mb-3">
+                      Item #<%= index + 1 %>
+                    </div>
+                    <div class="item-name">
+                      <%= child.sku %>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-column">
+                    <div class="header detail-header mt-4 mb-3">
+                      Description
+                    </div>
+                    <div class="item-name">
+                      <%= child.description %>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex flex-column details">
+                  <div class="header detail-header mt-4 mb-3">
+                    Quantity
+                  </div>
+                  <div class="quantity">
+                    <%= child.quantity %>
+                  </div>
+                </div>
+                <div class="d-flex flex-column details">
+                  <div class="header detail-header mt-4 mb-3">
+                    Component Type
+                  </div>
+                  <div class="quantity">
+                    <%= child.component_type %>
+                  </div>
+                </div>
+              </div>
+              <div class="whats-included mt-4 mb-3">
+                <div class="bold detail-header">
+                  What's Included
+                </div>
+                <div class="pr-4">
+                  <ul class="service-contents-list">
+                    <% child.contents.each do |content| %>
+                      <li>
+                        <%= content %>
+                      </li>
+                    <% end %>
+                  </ul>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+// clear out old content in case this isn't user's first query.
+$("#query-result").empty();
+$("#query-result").removeClass("active");
+
+<% if presenter %>
+  $("#query-result").addClass("active");
+  $("<%= escape_javascript(render("models/show")) %>").appendTo("#query-result");
+  <%= render 'shared/query_results' %>
+
+  $(".show-details").on("click", function(e) {
+    e.preventDefault();
+
+    var link = $(this);
+    var detailsArea = $(this).parent().siblings(".details-area");
+
+    detailsArea.slideToggle("slow", function() {
+      if ( link.context.classList.contains("active") ) {
+        link.text("Show Details");
+        link.removeClass("active");
+      } else {
+        link.text("Hide Details");
+        link.addClass("active");
+      }
+    });
+  })
+
+
+  <% if @str_query %>
+    var formattedStrQuery = '<%= @str_query %>'.replace(/&amp;/g, '&');
+    var newURL = window.location.protocol + "//" + window.location.host + window.location.pathname + formattedStrQuery;
+    window.history.pushState({ path: newURL },'', newURL);
+  <% end %>
+
+  <% if @current_instrument_model %>
+    var _href = $("a.feedback-link").attr("href");
+    $("a.feedback-link").attr("href", _href + "?q=<%= @current_instrument_model %>");
+  <% end %>
+
+<% else %>
+  // Wrapping in a setTimeout to avoid flashing this message right before the instrument renders.
+
+  setTimeout(function(){
+    if ($("#query-result *").length === 0) {
+      <%= render 'shared/query_results' %>
+      if ($("#query-result *").length === 0) {
+        $("<h2>Sorry, that is not a valid model number or name.</h2>").appendTo("#query-result");
+      }
+    }
+
+  }, 5000);
+
+<% end %>
+
+
+

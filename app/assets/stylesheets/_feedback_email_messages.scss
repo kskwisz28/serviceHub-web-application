@@ -1,0 +1,239 @@
+#feedbackFormModal {
+  .feedback-modal-header {
+    border-bottom: none;
+  }
+
+  $close-icon-right-padding: 20px;
+  .tf-logo {
+    padding-top: 20px;
+    padding-right: 8px;
+    // padding-bottom: 8px;
+  }
+
+  .close > a > img{
+    padding-right: $close-icon-right-padding;
+    margin-top: -72px;
+  }
+
+
+  $modal-width: 360px;
+
+  &.modal {
+    position: fixed;
+    height: auto;
+    width: $modal-width;
+    top: 50px;
+    left: 50%;
+    margin-left: -($modal-width/2);
+    font-size: 14px;
+    border-radius: 40px;
+    text-align: center;
+
+    .feedback-modal-content {
+      border-bottom: none;
+
+      .feedback-modal-body {
+        padding: 15px 15px 10px;
+
+        h3 {
+          font-family: "HelveticaNeueMedium";
+          margin-bottom: 0px;
+        }
+
+        .role-selection-prompt, label {
+          font-family: "HelveticaNeueMedium";
+        }
+
+        form {
+          margin-top: 30px;
+
+          .roles {
+            flex-direction: column;
+            margin-top: .5rem;
+
+            .form-group {
+              label {
+                margin-left: 10px;
+                font-family: "HelveticaNeue";
+              }
+            }
+          }
+
+          .subject.form-group {
+            margin-top: .5rem;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            #subject-error {
+              display: none;
+              color: red;
+            }
+
+            select#subject {
+              appearance: none;
+              padding: 0px 8px;
+              background-image: asset_url("icons/down-arrow.svg");
+              background-repeat: no-repeat;
+              background-position-x: 98%;
+              background-position-y: 16px;
+              background-size: 10px;
+              width: 80%;
+            }
+
+            #subject-select {
+              height: 40px;
+              width: 300px;
+              border: 1px solid #A1A1A1;
+              appearance: none;
+            }
+
+            select {
+              margin-bottom: 0;
+            }
+
+            textarea {
+              width: 80%;
+            }
+          }
+
+          .referral-instrument {
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+
+            input {
+              width: 80%;
+            }
+          }
+        }
+
+        .feedback-thank-you-message {
+          padding: 50px;
+
+          h1 {
+            font-size: 32px;
+          }
+        }
+      }
+
+      .save-area {
+        border: none;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        .btn {
+          width: 103px;
+          height: 50px;
+
+          &:disabled, &[disabled] {
+            background-color: $med-gray !important;;
+            color: white !important;
+            border: none;
+          }
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-backdrop {
+  width: 100%;
+  &.show {
+    background-color: #222222;
+    opacity: 70%;
+  }
+}
+
+
+@media only screen and (min-width: 768px) {
+
+  #feedbackFormModal {
+    $modal-width: 588px;
+
+    &.modal {
+      position: fixed;
+      height: auto;
+      width: $modal-width;
+      top: 150px;
+      left: 50%;
+      margin-left: -($modal-width/2);
+      font-size: 14px;
+      border-radius: 40px;
+
+      .feedback-modal-content {
+        flex-direction: column;
+
+        .feedback-modal-body {
+          padding: 15px 40px 10px;
+
+          h1 {
+            text-align: center;
+          }
+
+          form {
+            .roles {
+              flex-direction: row;
+
+              .form-group {
+                margin-bottom: 1rem;
+                margin-left: 0;
+              }
+            }
+
+            .subject.form-group {
+              flex-direction: column;
+              align-items: flex-start;
+
+              label {
+                margin-right: 10px;
+              }
+              select#subject {
+                background-position-y: 12px;
+                background-size: 16px;
+                width: 100%;
+              }
+              select {
+                width: 100%;
+              }
+              textarea {
+                width: 100%;
+              }
+            }
+
+            .referral-instrument {
+              flex-direction: row;
+
+              label {
+                margin-right: 10px;
+              }
+
+              input {
+                width: 50%;
+              }
+            }
+          }
+
+          .feedback-thank-you-message {
+            padding: 50px;
+  
+            h1 {
+              font-size: 32px;
+            }
+          }
+        }
+
+        .save-area {
+          align-items: flex-end;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+
+}

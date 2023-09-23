@@ -1,0 +1,59 @@
+<div class="d-flex flex-column w-100" id="send-docs">
+
+  <h2 class="page-header send-documents-header">Send Documents</h2>
+  <div class="w-100 spacer"></div>
+
+  <div class="d-flex flex-column resource active email-message">
+    <div class="attachments mb-5">
+      <h4>Attachments</h4>
+      <div class="row w-100 service-hub-row service-hub-header-row">
+        <div class="item">Item</div>
+        <div class="description">Description</div>
+        <div class="preview">Preview</div>
+        <div class="action"></div>
+      </div>
+
+      <ul class="selected-literature-list">
+        <% current_email_message.literature.each_with_index do |lit, index| %>
+          <li class="selected-literature w-100 mt-3" id=<%="lit-row-#{lit.asset_url.gsub(/[^a-zA-Z0-9]/, "")}" %>>
+            <div class="item"><%= index + 1 %>.</div>
+            <div class="d-flex flex-column description">
+              <div class="title header"><%= lit.public_title %></div>
+                <div class="description-text"><%= lit.public_description %></div>
+            </div>
+            <div class="d-flex preview">
+              <%= image_tag thumbnail(lit.asset_url) rescue image_tag 'gray-rectangle.jpg', class: "img-fluid" %>
+            </div>
+            <div class="d-flex action">
+              <%= link_to email_message_path(email_message: { literature_asset_url: lit.asset_url }), method: :put, remote: true, id: "literature-link-#{lit.asset_url.gsub(/[^a-zA-Z0-9]/, "")}" do %>
+                <%= show_svg('icons/times.svg') %>
+              <% end %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+     <div class="email-body w-100">
+      <%= form_with model: current_email_message, url: email_message_path, method: :put, class: "d-flex flex-column align-items-end" do |f| %>
+        <div class="d-flex form-group">
+          <%= f.label :email_body, "Note to the customer:", class: "mr-4" %>
+          <%= f.text_area :email_body, rows: 5, class: "w-100" %>
+        </div>
+
+        <div class="d-flex form-group">
+          <%= f.label :customer_email, "Customer’s email:", class: "mr-4" %>
+          <div class="w-100 customer-email">
+            <%= f.text_field :customer_email  %>
+            <div class="w-100 error" id="customer-email-error"></div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-end w-100 submission-area">
+          <div class='current-settings'>Currently sending from <%= "#{current_user.email}" %> <%= link_to 'Change settings', '', class: "change-settings mr-4", data: { toggle: :modal, target: "#userPrefsModal" }, id: "change-settings-prompt" %> </div>
+          <%= f.submit "Send", class: "btn btn-danger py-3 px-4" %>
+        </div>
+      <% end %>
+     </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<h2 class="text-center">
+  Literature
+</h2>
+
+<div class="w-100 spacer">
+</div>
+
+<div class="services-area">
+  <h4 class="mt-2">
+    Literature
+  </h4>
+
+  <div class="d-flex flex-column mb-4 resource services-data">
+    <div class="service-hub-data-section">
+
+      <%= render("models/literature_header") %>
+      <% presenter.literatures.each do |literature| %>
+        <%= render("models/literature", literature: literature) %>
+      <% end %>
+    </div>
+  </div>
+</div>

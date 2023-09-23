@@ -1,0 +1,36 @@
+<div class="row d-flex flex-column w-100 resource active" id="admin-dashboard">
+  <div class="d-flex w-100 header-area">
+    <div class="d-flex w-100">
+      <h1 class="admin-header">Admin</h1>
+    </div>
+
+    <div class="admin-times-icon">
+      <%= link_to(show_svg("icons/times-larger.svg"), root_path) %>
+    </div>
+  </div>
+  
+  <div class="admin-menu">
+    <div class="literature-tool-icon">
+      <%= link_to(show_svg("icons/PDF.svg"), "#") %>
+      <p class="title">Literature Tool</p>
+    </div>
+    <div class="pages-tool-icon">
+      <%= link_to(show_svg("icons/pages.svg"), "#") %>
+      <p class="title">Pages</p>
+    </div>
+    <div class="alert-bar-tool-icon">
+      <%= link_to(admins_alert_bar_path) do %>
+        <%= show_svg("icons/alert.svg") %>
+        <p class="title">Alert Bar</p>
+      <% end %>
+    </div>
+    <div class="instruments-tool-icon">
+      <%= link_to(show_svg("icons/images.svg"), "#") %>
+      <p class="title">Instrument Images</p>
+    </div>
+    <div class="analytics-tool-icon">
+      <%= link_to(show_svg("icons/analytics.svg"), "#") %>
+      <p class="title">Analytics</p>
+    </div>
+  </div>
+</div>

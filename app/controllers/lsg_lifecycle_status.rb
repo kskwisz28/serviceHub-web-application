@@ -1,0 +1,3 @@
+class LsgLifecycleStatusController < ApplicationController
+
+end

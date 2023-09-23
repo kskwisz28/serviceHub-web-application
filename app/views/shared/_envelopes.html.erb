@@ -1,0 +1,10 @@
+<% if current_email_message.literature_asset_urls.any? %>
+  <%= link_to email_message_path, class: "nav-link envelope open-envelope" do %>
+      <%= show_svg('icons/envelope-open.svg') %>
+    <span class='item-count'><%= current_email_message.literature_asset_urls.count %></span>
+  <% end %>
+<% else %>
+  <%= link_to email_message_path, class: "nav-link  envelope closed-envelope" do %>
+    <%= show_svg('icons/envelope-closed.svg') %>
+  <% end %>
+<% end %>

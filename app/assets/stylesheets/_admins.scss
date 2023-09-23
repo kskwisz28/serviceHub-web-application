@@ -1,0 +1,282 @@
+.upper-banner {
+  min-height: 65px;
+  margin-right: -10px;
+  margin-left: -10px;
+}
+
+.admin-banner {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: $tf-red;
+  width: 100%;
+  height: 248px;
+  min-height: 248px;
+  max-height: 248px;
+  z-index: -1;
+}
+
+#admin-dashboard {
+  box-shadow: 0 5px 4px -4px #959595;
+  margin-top: -96px;
+}
+
+.header-area {
+  margin-bottom: 30px;
+}
+
+.admin-header {
+  margin-top: 56px;
+  margin-left: 72px;
+  margin-bottom: 86px;
+}
+
+.admin-times-icon {
+  width: 10px;
+  margin-right: 40px;
+  margin-top: 7px;
+
+  svg {
+    fill: $med-gray;
+
+    &:focus {
+      outline: none;
+      border: none;
+    }
+
+    &:hover {
+      fill: black;
+    }
+  }
+}
+
+.admin-menu {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 56px;
+  margin-right: 56px;
+  margin-top: -24px;
+  margin-bottom: 56px;
+}
+
+.admin-text-container {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 56px;
+  margin-right: 56px;
+  margin-top: -24px;
+  margin-bottom: 56px;
+}
+
+.literature-tool-icon {
+  text-align: center;
+}
+
+.pages-tool-icon {
+  text-align: center;
+}
+
+.alert-bar-tool-icon {
+  text-align: center;
+  margin-top: -8px;
+}
+
+.instruments-tool-icon {
+  text-align: center;
+}
+
+.analytics-tool-icon {
+  text-align: center;
+}
+
+p.title {
+  font-family: "HelveticaNeueBold";
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin-top: 16px;
+  text-decoration: none;
+  color: rgb(74, 73, 74);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  justify-content: end;
+  text-align: center;
+}
+
+.footer-links-container {
+  margin-right: 64px;
+}
+
+#new-alert {
+  display: grid;
+  justify-items: center;
+  box-sizing: border-box;
+}
+
+.alert-bar-form-container {
+  display: grid;
+  grid-template-columns: 104px 270px;
+  row-gap: 16px;
+  justify-items: start;
+  margin-bottom: 32px;
+
+  #field {
+    height: 40px;
+    width: 100%;
+  }
+
+  #save-alert-btn {
+    grid-column: 2/3;
+    width: 103px;
+    height: 50px;
+    justify-self: end;
+  }
+}
+
+.alert-bar-data-section {
+  display: block;
+}
+
+.alert-description {
+  flex: 0 0 40%;
+  max-width: 110px;
+  width: 100%;
+  // min-width: 60px;
+  // font-size: 11px;
+}
+
+.button-text {
+  flex: 0 0 10%;
+  min-width: 60px; // Must accomodate "Brochure"
+  // padding-right: 10px;
+  // padding-left: 10px;
+  // font-size: 11px;
+}
+
+.button-url {
+  flex: 0 0 20%;
+  min-width: 60px;
+  // font-size: 11px;
+}
+
+.admin-options {
+  flex: 0 0 20%;
+  padding-left: 50px;
+  // font-size: 11px;
+}
+
+@media (min-width: 576px) {
+  .alert-description {
+    max-width: 220px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .alert-description {
+    max-width: 460px;
+    padding-right: 15px;
+  }
+
+  .button-text {
+    flex: 0 0 14.5%;
+  }
+
+  .button-url {
+    flex: 0 0 16.5%;
+  }
+
+  .admin-options {
+    flex: 0 0 15%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #admin-dashboard {
+    box-shadow: none;
+  }
+
+  .admin-times-icon {
+    visibility: hidden;
+  }
+
+  .header-area {
+    justify-content: center;
+  }
+
+  .admin-header {
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 86px;
+    font-weight: bold;
+    font-size: 35px;
+  }
+
+  .admin-menu {
+    flex-direction: column;
+  }
+
+  .literature-tool-icon {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .pages-tool-icon {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .alert-bar-tool-icon {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .instruments-tool-icon {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .footer {
+    justify-content: center;
+  }
+
+  .footer-links-container {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #new-alert {
+    display: block;
+  }
+  
+  .alert-bar-form-container {
+    display: block;
+    grid-template-columns: 104px 270px;
+    row-gap: 16px;
+    justify-items: start;
+  
+    #field {
+      height: 40px;
+      width: 100%;
+    }
+  
+    #save-alert-btn {
+      width: 100%;
+      height: 50px;
+    }
+  }
+
+  .footer {
+    justify-content: space-around;
+  }
+
+  .footer-links-container {
+    margin-right: 0;
+  }
+
+  .footer-links {
+    font-size: 12px;
+  }
+}

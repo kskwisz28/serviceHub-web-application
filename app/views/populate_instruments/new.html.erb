@@ -1,0 +1,11 @@
+<div class="d-flex flex-column align-items-center mt-5">
+  <h1 class="">Populate Instruments</h1>
+
+  <h3 class="mb-3"> To refresh the data in the Instruments collection, press the button below.</h3>
+
+  <%= form_with url: populate_instruments_path, method: :post do |f| %>
+    <%= f.button "Do it!", class: "btn btn-danger btn-simple" %>
+  <% end %>
+
+  <p>This will launch a rake task that searches for exported spreadsheet data in Mongo and generates an Instrument document for each model.</p>
+</div>

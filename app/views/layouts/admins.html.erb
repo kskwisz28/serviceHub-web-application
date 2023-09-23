@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ServiceHub</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path("favicon.ico") %>
+    <meta name="description" content="ThermoFisher Instruments ServiceHub">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0">
+    <%= stylesheet_link_tag("application", media: "all") %>
+    <%= javascript_include_tag("application") %>
+    <%= javascript_include_tag(GoogleAnalytics::JS_URL, async: true) %>
+  </head>
+
+  <body>
+    <div class="container-xl">
+      <div class="upper-banner d-flex align-items-center">
+
+        <div class="d-flex justify-content-between align-items-center w-100 p-2">
+          <%= link_to root_path do %>
+            <%= image_tag asset_path("logo-color.png"), width: "140", alt: "logo" %>
+          <% end %>
+
+          <div>
+            <%= link_to(image_tag(asset_path("icons/admin-wrench.svg")), admins_home_path, :class=>"admin-icon") %>
+            <%= image_tag asset_path("icons/faqs.svg"), alt: "faqs icon", class: "faqs-icon" %>
+            <%= image_tag asset_path("icons/gear.svg"), alt: "settings icon", class: "settings-icon", data: {toggle: :modal, target: "#userPrefsModal" } %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= render("layouts/flash") %>
+
+    <div class="admin-banner d-flex">
+      <div class="container-xl">
+      </div>
+    </div>
+
+    <div class="container-xl content">
+      <%= yield %>
+    </div>
+
+    <div class="footer">
+      <div class="px-3">
+        <div class="footer-links-container">
+          <%= link_to "FAQs", "#", class: "footer-links" %>
+          <%= link_to "Contact", "#", class: "footer-links" %>
+          <%= link_to "Changelog", "#", class: "footer-links" %>
+          <%= link_to "Feature Request", "#", class: "footer-links" %>
+        </div>
+      </div>
+    </div>
+
+    <%= render partial: "users/edit"%>
+
+    <div data-is-known-user="<%= is_known_user? %>">
+    </div>
+  </body>
+</html>

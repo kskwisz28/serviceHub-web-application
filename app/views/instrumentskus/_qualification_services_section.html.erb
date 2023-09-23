@@ -1,0 +1,47 @@
+<h4 class="mt-2"><%= locals[:name] %></h4>
+<div class="d-flex flex-column resource qualification-services">
+  <div class="service-hub-data-section">
+    <%= render 'row_section_header' %>
+    <% locals[:services].each do |service| %>
+      <div class="row w-100 service-hub-row">
+        <div class="d-flex flex-nowrap w-100 primary-info">
+          <div class="sku"><%= service.sku %></div>
+          <div class="name"><%= service.name %></div>
+          <div class="type"><%= service.qualification_type %></div>
+          <% if service.integration_string %>
+            <div class="price">
+              <%= service.price %>
+              <div class=price-details><%= service.integration_string %></div>
+            </div>
+          <% else %>
+            <div class="price"><%= service.price %></div>
+          <% end %>
+          <%= link_to "Show Details", '', class: 'show-details' %>
+        </div>
+        <div class="details-area w-100 mt-3">
+          <div class="d-flex mt-4 mb-4">
+            <div class="whats-included">
+              <div class="bold detail-header">What's Included</div>
+              <div class="pr-4"><%= service.contents %></div>
+            </div>
+            <div class="other-details d-flex w-100">
+              <div class="d-flex other-details-group">
+                <div class="mb-4 detail-1">
+                  <div class="pricing-condition bold detail-header">Pricing Condition</div>
+                  <div><%= service.pricing_condition %></div>
+                </div>
+                <div class="mb-4 detail-2">
+                  <div class="product-manager bold detail-header">Product Manager</div>
+                  <div><%= service.product_manager %></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end details-area -->
+      </div>
+      <!-- end row -->
+    <% end %>
+  </div>
+  <!-- end section -->
+</div>

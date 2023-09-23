@@ -1,0 +1,3 @@
+<div class='current-settings'>
+  Currently showing <%= link_to "#{current_user.role.try(:underscore).try(:titlecase)} Data", '', data: { toggle: :modal, target: "#userPrefsModal" } %> for <%= link_to current_user.country_name, '', data: { toggle: :modal, target: "#userPrefsModal" } %>. <%= link_to 'Change settings', '', data: { toggle: :modal, target: "#userPrefsModal" }, id: "change-settings-prompt" %>
+ </div>

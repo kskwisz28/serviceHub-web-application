@@ -1,0 +1,200 @@
+.lit-library-header {
+  margin-top: 50px;
+}
+
+#query-result .literature .service-hub-data-section {
+  display: block;
+  margin-bottom: 0;
+}
+
+.resource.requested-literature {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.literature {
+  display: flex;
+
+  .lit-section-header {
+    background-color: $med-light-gray;
+    font-size: 16px;
+    padding: 1rem;
+    margin: auto;
+    margin-bottom: 10px;
+
+    a {
+      position: relative;
+      margin-left: 15px;
+
+      &:before {
+        position: absolute;
+        top: -3px;
+        left: -19px;
+        // Using the tiny triangle so avoid having it looks silly on mobile Safari.
+        content: '▸';
+        font-size: 20px;
+      }
+      &.active:before {
+        content: '▼';
+        top: 0;
+        font-size: 11px;
+      }
+    }
+  }
+
+
+  .service-hub-data-section {
+    display: none;
+    margin-bottom: 40px;
+  }
+
+  .name {
+    flex: 0 0 40%;
+    max-width: 110px;
+    width: 100%;
+  }
+
+  .type {
+    flex: 0 0 10%;
+    min-width: 60px; // Must accomodate "Brochure"
+  }
+
+  .region {
+    flex: 0 0 17%;
+  }
+
+  .link {
+    flex: 0 0 13%;
+    padding-right: 5px;
+  }
+
+  .attach {
+
+    .link-status  {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .attach-info {
+      width: auto;
+      max-width: 60px;
+      text-align: center;
+    }
+
+    .attached {
+      color: $tf-red;
+    }
+
+    .envelope {
+      position: relative;
+
+      &.closed {
+        margin-top: 4px;
+
+        svg {
+          fill: $light-blue;
+        }
+      }
+
+      &.open {
+        svg {
+          fill: $tf-red;
+          height: 20px;
+        }
+
+        .status {
+          position: absolute;
+          right: 15px;
+          top: 5px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: $tf-red;
+          text-align: center;
+          color: white;
+          font-size: 8px;
+          line-height: 8px;
+        }
+      }
+    }
+
+  }
+
+  .literature-library {
+    .service-hub-header-row {
+      font-size: 12px;
+    }
+  }
+}
+
+
+@media (min-width: 576px) {
+  .literature {
+    .name {
+      max-width: 220px;
+    }
+  }
+}
+
+
+@media only screen and (min-width: 768px) {
+
+  .literature {
+
+    .name {
+      max-width: 460px;
+      padding-right: 15px;
+    }
+
+    .type {
+      flex: 0 0 14.5%;
+    }
+
+    .region {
+      flex: 0 0 16.5%;
+    }
+
+    .link {
+      flex: 0 0 15%;
+    }
+
+    .attach{
+
+      .envelope {
+
+        &.closed {
+          margin-top: 0;
+        }
+      }
+
+      .link-status  {
+        flex-direction: row;
+      }
+
+      .attach-info {
+        width: auto;
+        max-width: 100%;
+        text-align: left;
+      }
+    }
+  }
+
+  .literature-library {
+    .service-hub-header-row {
+      font-size: 13px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .literature {
+
+    .attach{
+
+      .attach-info {
+        width: 100px;
+      }
+    }
+  }
+}
